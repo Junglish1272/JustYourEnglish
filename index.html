@@ -3,31 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우독학원 영어강사 준영</title>
+    <title>우독학원 영어강사 김준영</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <style>
-        /* 1. 전체 색감 및 폰트 설정 (기존 유지) */
         :root {
             --primary-blue: #6FA3EF;       
             --dark-blue: #4A90E2;          
             --bg-color: #F0F8FF;           
             --text-color: #333333;         
             --white: #ffffff;
-            --gray-light: #f9f9f9;
         }
 
         body {
             font-family: 'Pretendard', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            margin: 0; padding: 0;
+            display: flex; flex-direction: column; min-height: 100vh;
         }
 
-        /* 2. 헤더 (기존 유지) */
         header {
             background-color: var(--white);
             text-align: center;
@@ -35,209 +29,91 @@
             box-shadow: 0 2px 10px rgba(111, 163, 239, 0.1);
         }
 
-        header h1 {
-            margin: 0;
-            color: var(--dark-blue);
-            font-size: 1.8rem;
-            letter-spacing: -1px;
-        }
-        
-        header p {
-            color: #777;
-            margin-top: 5px;
-            font-size: 0.95rem;
-        }
+        header h1 { margin: 0; color: var(--dark-blue); font-size: 1.8rem; }
+        header p { color: #777; margin-top: 5px; font-size: 0.95rem; }
 
-        /* 3. 네비게이션 (기존 유지) */
         nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 20px;
-            background: var(--white);
+            display: flex; justify-content: center; flex-wrap: wrap;
+            gap: 10px; padding: 20px; background: var(--white);
             border-bottom: 1px solid #e0e0e0;
         }
 
         .tab-btn {
-            background: none;
-            border: 2px solid var(--bg-color);
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #888;
-            transition: 0.3s;
-        }
-
-        .tab-btn:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
+            background: none; border: 2px solid var(--bg-color);
+            padding: 10px 20px; border-radius: 30px;
+            cursor: pointer; font-size: 1rem; font-weight: 600;
+            color: #888; transition: 0.3s;
         }
 
         .tab-btn.active {
             background-color: var(--primary-blue);
-            color: var(--white);
-            border-color: var(--primary-blue);
+            color: var(--white); border-color: var(--primary-blue);
             box-shadow: 0 4px 10px rgba(111, 163, 239, 0.4);
         }
 
-        /* 4. 메인 컨텐츠 영역 (기존 유지) */
-        main {
-            flex: 1;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
+        main { flex: 1; max-width: 800px; margin: 30px auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
 
         .tab-content {
-            display: none;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
+            display: none; background: var(--white);
+            padding: 40px; border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             animation: fadeIn 0.5s ease;
         }
 
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content.active { display: block; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        h2 {
-            color: var(--dark-blue);
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
+        h2 { color: var(--dark-blue); border-bottom: 2px solid var(--bg-color); padding-bottom: 10px; margin-top: 0; }
         .card-list { display: grid; gap: 15px; }
-        .card {
-            background: var(--bg-color);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 5px solid var(--primary-blue);
-        }
-        .highlight-text { font-size: 1.1rem; line-height: 1.8; }
+        .card { background: var(--bg-color); padding: 15px; border-radius: 10px; border-left: 5px solid var(--primary-blue); }
 
-        /* 테이블 스타일 (기존 유지) */
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
-        th { background-color: var(--bg-color); color: var(--dark-blue); }
+        /* --- 주간리포트 학생 탭 스타일 --- */
+        .student-tabs {
+            display: flex; gap: 5px; border-bottom: 2px solid #eee; margin-bottom: 20px; overflow-x: auto;
+        }
+        .st-tab {
+            padding: 10px 15px; border: none; background: none; cursor: pointer;
+            font-weight: bold; color: #999; border-bottom: 3px solid transparent; transition: 0.2s;
+        }
+        .st-tab.active { color: var(--primary-blue); border-bottom: 3px solid var(--primary-blue); }
 
-        /* --- [NEW] 주간리포트 스타일 추가 --- */
-        .student-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .student-btn {
-            padding: 15px 0;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #555;
-            transition: 0.2s;
-            text-align: center;
-        }
-        .student-btn:hover { background: var(--bg-color); color: var(--primary-blue); border-color: var(--primary-blue); }
+        .password-area { display: none; background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+        .password-input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 150px; }
+        .submit-btn { padding: 10px 20px; background: var(--primary-blue); color: white; border: none; border-radius: 5px; cursor: pointer; }
         
-        .password-area {
-            display: none; /* 평소엔 숨김 */
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .password-input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 150px;
-        }
-        .submit-btn {
-            padding: 10px 20px;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .report-result {
-            display: none; /* 평소엔 숨김 */
-            margin-top: 20px;
-            border: 1px solid #eee;
-            padding: 20px;
-            border-radius: 10px;
-        }
+        .report-result { display: none; margin-top: 20px; border: 1px solid #eee; padding: 20px; border-radius: 10px; }
         .score-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
-        .score-table th { background: var(--bg-color); text-align: center; width: 40%; }
-        .score-table td { text-align: center; border-bottom: 1px solid #eee; }
+        .score-table th { background: var(--bg-color); text-align: center; width: 40%; padding: 10px; }
+        .score-table td { text-align: center; border-bottom: 1px solid #eee; padding: 10px; }
 
-        /* --- [NEW] 아카이브(게시판) 스타일 추가 --- */
-        .post-item {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-        .post-header {
-            background: var(--bg-color);
-            padding: 15px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .post-header:hover { background: #e3efff; }
-        .post-content {
-            display: none; /* 펼치기 전 숨김 */
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #eee;
-        }
-        .comment-section {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px dashed #ddd;
-        }
+        /* --- 아카이브 게시판 & 등록 버튼 스타일 --- */
+        .archive-controls { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+        .btn-add-post { background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        
+        .post-form { display: none; background: #f0f4f8; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .post-form input, .post-form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+
+        .post-item { border: 1px solid #eee; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+        .post-header { background: var(--bg-color); padding: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .post-content { display: none; padding: 20px; background: white; border-top: 1px solid #eee; }
+        
+        .comment-section { margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ddd; }
         .comment-input-area { display: flex; gap: 10px; margin-bottom: 15px; }
         .comment-input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
-        .comment-list { list-style: none; padding: 0; }
-        .comment-item { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
-        .reply-item { margin-left: 20px; padding: 5px 0; background: #fafafa; border-radius: 4px; padding-left: 10px; color: #555; }
-        .reply-btn { font-size: 0.8rem; color: var(--primary-blue); background: none; border: none; cursor: pointer; margin-left: 5px; }
+        .reply-item { margin-left: 20px; padding: 5px 0; background: #fafafa; border-radius: 4px; padding-left: 10px; color: #555; font-size: 0.85rem; }
+        .reply-btn { font-size: 0.8rem; color: var(--primary-blue); background: none; border: none; cursor: pointer; }
 
-        /* 5. 푸터 (기존 유지) */
-        footer {
-            background-color: #3b4d61;
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: auto;
-        }
+        footer { background-color: #3b4d61; color: var(--white); text-align: center; padding: 40px 20px; margin-top: auto; }
         .footer-info { line-height: 1.8; font-size: 0.9rem; opacity: 0.9; }
         .footer-logo { font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; display: block; }
-
     </style>
 </head>
 <body>
 
     <header>
-        <h1>우독학원 영어강사 준영</h1>
-        <p>진심으로 소통하고 결과로 증명합니다</p>
+        <h1>우독학원 영어강사 김준영</h1>
+        <p>PATH TO PERFECTION</p>
     </header>
 
     <nav>
@@ -252,272 +128,175 @@
     <main>
         <section id="intro" class="tab-content active">
             <h2>👨‍🏫 강사 소개</h2>
-            <p class="highlight-text">
-                안녕하세요, <strong>우독학원</strong>에서 영어를 가르치는 <strong>준영 강사</strong>입니다.<br><br>
+            <p style="font-size:1.1rem; line-height:1.8;">
+                안녕하세요, <strong>우독학원</strong>에서 영어를 가르치는 <strong>김준영 강사</strong>입니다.<br><br>
                 단순한 지식 전달을 넘어 아이들이 <b>스스로 공부하는 힘</b>을 길러주는 것을 목표로 합니다.
-                꼼꼼한 관리와 명쾌한 강의로 학생들의 러닝메이트가 되겠습니다.
             </p>
         </section>
 
         <section id="curriculum" class="tab-content">
             <h2>📚 커리큘럼</h2>
             <div class="card-list">
-                <div class="card">
-                    <h3>🌱 중등부</h3>
-                    <p>내신 만점을 위한 문법 및 독해 기초 강화</p>
-                </div>
-                <div class="card">
-                    <h3>🚀 고등부</h3>
-                    <p>수능 최저 등급 확보 및 전략적 문제풀이 훈련</p>
-                </div>
+                <div class="card"><h3>🌱 중등부</h3><p>내신 만점을 위한 문법 및 독해 기초 강화</p></div>
+                <div class="card"><h3>🚀 고등부</h3><p>수능 최저 등급 확보 및 전략적 문제풀이 훈련</p></div>
             </div>
         </section>
 
         <section id="report" class="tab-content">
             <h2>📊 주간리포트 (학부모 전용)</h2>
-            <p>학생 이름을 클릭하고 비밀번호를 입력하면 리포트를 확인할 수 있습니다.<br><small style="color:#888;">*테스트용 비밀번호: 1234</small></p>
-            <br>
-            
-            <div class="student-grid">
-                <button class="student-btn" onclick="selectStudent('김우독')">김우독</button>
-                <button class="student-btn" onclick="selectStudent('이영어')">이영어</button>
-                <button class="student-btn" onclick="selectStudent('박일등')">박일등</button>
-                <button class="student-btn" onclick="selectStudent('최성실')">최성실</button>
+            <div class="student-tabs">
+                <button class="st-tab" onclick="selectStudentTab('김우독', this)">김우독</button>
+                <button class="st-tab" onclick="selectStudentTab('이영어', this)">이영어</button>
+                <button class="st-tab" onclick="selectStudentTab('박일등', this)">박일등</button>
+                <button class="st-tab" onclick="selectStudentTab('최성실', this)">최성실</button>
             </div>
 
             <div id="pw-section" class="password-area">
-                <h3 id="selected-student-name">학생 이름</h3>
-                <input type="password" id="input-pw" class="password-input" placeholder="비밀번호 입력 (1234)">
+                <h3 id="selected-student-name">학생을 선택해주세요</h3>
+                <input type="password" id="input-pw" class="password-input" placeholder="비밀번호 (1234)">
                 <button class="submit-btn" onclick="checkPassword()">확인</button>
-                <p id="pw-error" style="color:red; display:none; font-size:0.9rem; margin-top:10px;">비밀번호가 일치하지 않습니다.</p>
+                <p id="pw-error" style="color:red; display:none; margin-top:10px;">비밀번호가 틀렸습니다.</p>
             </div>
 
             <div id="report-view" class="report-result">
-                <h3 style="color:var(--dark-blue);">📝 이번 주 학습 리포트</h3>
-                <p style="text-align:right; color:#777;">날짜: 2024년 1월 3주차</p>
-                
+                <h3 id="report-title" style="color:var(--dark-blue);">📝 주간 리포트</h3>
                 <table class="score-table">
-                    <tr>
-                        <th>출석 여부</th>
-                        <td>출석 (지각 없음)</td>
-                    </tr>
-                    <tr>
-                        <th>단어 테스트</th>
-                        <td><strong>45</strong> / 50 (Pass)</td>
-                    </tr>
-                    <tr>
-                        <th>리뷰 테스트</th>
-                        <td><strong>90</strong> 점</td>
-                    </tr>
-                    <tr>
-                        <th>과제 수행도</th>
-                        <td>⭐⭐⭐⭐⭐ (완벽)</td>
-                    </tr>
+                    <tr><th>출석</th><td>정상 출석</td></tr>
+                    <tr><th>단어 테스트</th><td>48/50</td></tr>
+                    <tr><th>과제 이행</th><td>완료</td></tr>
                 </table>
-
-                <div class="card" style="background:white; border:1px solid #ddd;">
-                    <strong>👨‍🏫 선생님 코멘트:</strong><br><br>
-                    이번 주 관계대명사 파트 이해도가 아주 높습니다. 
-                    단어 암기만 조금 더 꼼꼼히 한다면 완벽할 것 같습니다. 
-                    수업 태도가 매우 훌륭합니다!
-                </div>
+                <div class="card" style="background:white;"><strong>강사 코멘트:</strong><br>성실하게 잘 따라오고 있습니다.</div>
             </div>
         </section>
 
         <section id="fame" class="tab-content">
             <h2>🏆 명예의 전당</h2>
-            <p>노력의 결실을 맺은 자랑스러운 학생들입니다.</p>
-            <br>
             <div class="card-list">
-                <div class="card">
-                    🥇 <strong>○○고 2학년 김XX</strong> <br> 기말고사 전교 1등
-                </div>
-                <div class="card">
-                    📈 <strong>△△중 3학년 이XX</strong> <br> 영어 등급 3단계 상승
-                </div>
+                <div class="card">🥇 <strong>○○고 2학년 김XX</strong> - 전교 1등</div>
+                <div class="card">📈 <strong>△△중 3학년 이XX</strong> - 3등급 상승</div>
             </div>
         </section>
 
         <section id="class" class="tab-content">
             <h2>⏰ 현재 진행중인 수업</h2>
             <table>
-                <thead>
-                    <tr>
-                        <th>반 이름</th>
-                        <th>시간표</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>고2 수능집중반</td>
-                        <td>월/수 18:00 - 21:00</td>
-                    </tr>
-                </tbody>
+                <tr style="background:#eee;"><th>반 이름</th><th>시간표</th></tr>
+                <tr><td>고2 수능집중반</td><td>월/수 18:00 - 21:00</td></tr>
             </table>
         </section>
 
         <section id="archive" class="tab-content">
             <h2>💾 준영아카이브</h2>
-            <p>자료실 및 자유 게시판입니다. 궁금한 점은 댓글로 남겨주세요.</p>
-            <br>
+            <div class="archive-controls">
+                <button class="btn-add-post" onclick="togglePostForm()">+ 게시글 등록</button>
+            </div>
 
-            <div class="post-item">
-                <div class="post-header" onclick="togglePost(this)">
-                    <span>📁 고난도 빈칸추론 공략법.pdf</span>
-                    <span style="font-size:0.8rem; color:#888;">▼</span>
-                </div>
-                <div class="post-content">
-                    <p>빈칸추론 문제에서 가장 중요한 논리적 연결고리를 찾는 법을 정리했습니다.<br>다운로드 후 꼭 복습하세요!</p>
-                    <br>
-                    <a href="#" style="color:var(--primary-blue); text-decoration:underline;">[파일 다운로드]</a>
-                    
-                    <div class="comment-section">
-                        <h4>💬 댓글 (익명)</h4>
-                        <ul class="comment-list" id="comment-list-1">
-                            <li class="comment-item">
-                                <b>익명1:</b> 자료 감사합니다 쌤!
-                                <button class="reply-btn" onclick="showReplyInput(this)">답글</button>
-                            </li>
-                        </ul>
-                        <div class="comment-input-area">
-                            <input type="text" class="comment-input" placeholder="댓글을 입력하세요..." onkeydown="if(event.key === 'Enter') addComment(this, 'comment-list-1')">
-                            <button class="submit-btn" style="padding:5px 15px;" onclick="addComment(this.previousElementSibling, 'comment-list-1')">등록</button>
+            <div id="post-form" class="post-form">
+                <input type="text" id="post-title" placeholder="제목을 입력하세요">
+                <textarea id="post-body" rows="4" placeholder="내용을 입력하세요"></textarea>
+                <button class="submit-btn" onclick="addPost()">등록하기</button>
+            </div>
+
+            <div id="post-container">
+                <div class="post-item">
+                    <div class="post-header" onclick="togglePost(this)"><span>📁 고난도 빈칸추론 공략법</span><span>▼</span></div>
+                    <div class="post-content">
+                        <p>빈칸추론 핵심 자료입니다.</p>
+                        <div class="comment-section">
+                            <ul id="comments-1" style="list-style:none; padding:0;"></ul>
+                            <div class="comment-input-area">
+                                <input type="text" class="comment-input" placeholder="댓글..." onkeydown="if(event.key==='Enter') addComment(this, 'comments-1')">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="post-item">
-                <div class="post-header" onclick="togglePost(this)">
-                    <span>🎥 관계대명사 5분 핵심 요약 강의</span>
-                    <span style="font-size:0.8rem; color:#888;">▼</span>
-                </div>
-                <div class="post-content">
-                    <p>이번 주 수업 내용 중 가장 어려워했던 관계대명사 파트 보충 영상입니다.</p>
-                    <div style="background:#eee; width:100%; height:150px; display:flex; align-items:center; justify-content:center; color:#888;">영상 플레이어 영역</div>
-                    
-                     <div class="comment-section">
-                        <h4>💬 댓글 (익명)</h4>
-                        <ul class="comment-list" id="comment-list-2">
-                            <li class="comment-item">
-                                <b>익명1:</b> 3분 20초 부분 설명이 진짜 이해 잘돼요!
-                                <button class="reply-btn" onclick="showReplyInput(this)">답글</button>
-                                <div class="reply-item">↳ <b>준영쌤:</b> 고마워! 복습 철저히 하자~</div>
-                            </li>
-                        </ul>
-                        <div class="comment-input-area">
-                            <input type="text" class="comment-input" placeholder="댓글을 입력하세요..." onkeydown="if(event.key === 'Enter') addComment(this, 'comment-list-2')">
-                            <button class="submit-btn" style="padding:5px 15px;" onclick="addComment(this.previousElementSibling, 'comment-list-2')">등록</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </section>
     </main>
 
     <footer>
         <div class="footer-info">
             <span class="footer-logo">우독학원</span>
-            📍 인천광역시 서구 원당대로<br>
-            📞 학원 문의: 032) 719-4054<br>
-            📱 강사 직통: 010) 9434-9470<br>
-            <br>
-            <small>&copy; 2024 English Instructor Junyoung. All Rights Reserved.</small>
+            📍 인천광역시 서구 원당대로 | 📞 학원: 032)719-4054 | 📱 김준영: 010)9434-9470
         </div>
     </footer>
 
     <script>
-        // 1. 탭 전환 기능 (기존)
-        function openTab(tabName, elmnt) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(tabName).style.display = "block";
-            setTimeout(() => { document.getElementById(tabName).classList.add("active"); }, 10);
-            elmnt.classList.add("active");
+        function openTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).style.display = 'block';
+            btn.classList.add('active');
         }
 
-        // 2. 주간리포트 로직
-        let currentStudent = '';
-
-        function selectStudent(name) {
-            currentStudent = name;
+        // 주간리포트 학생 탭 선택
+        function selectStudentTab(name, btn) {
+            document.querySelectorAll('.st-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
             document.getElementById('pw-section').style.display = 'block';
             document.getElementById('report-view').style.display = 'none';
-            document.getElementById('selected-student-name').innerText = name + " 학생 리포트 조회";
+            document.getElementById('selected-student-name').innerText = name + " 학생 리포트";
             document.getElementById('input-pw').value = '';
-            document.getElementById('pw-error').style.display = 'none';
         }
 
         function checkPassword() {
-            const pw = document.getElementById('input-pw').value;
-            if (pw === '1234') { // 테스트용 비밀번호 1234
+            if (document.getElementById('input-pw').value === '1234') {
                 document.getElementById('pw-section').style.display = 'none';
                 document.getElementById('report-view').style.display = 'block';
-            } else {
-                document.getElementById('pw-error').style.display = 'block';
-            }
+            } else { alert('비밀번호가 틀렸습니다.'); }
         }
 
-        // 3. 아카이브 게시판 로직
+        // 아카이브 기능
+        function togglePostForm() {
+            const form = document.getElementById('post-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function addPost() {
+            const title = document.getElementById('post-title').value;
+            const body = document.getElementById('post-body').value;
+            if(!title || !body) return alert('제목과 내용을 입력하세요.');
+
+            const id = Date.now();
+            const postHtml = `
+                <div class="post-item">
+                    <div class="post-header" onclick="togglePost(this)"><span>📁 ${title}</span><span>▼</span></div>
+                    <div class="post-content">
+                        <p>${body}</p>
+                        <div class="comment-section">
+                            <ul id="comments-${id}" style="list-style:none; padding:0;"></ul>
+                            <div class="comment-input-area">
+                                <input type="text" class="comment-input" placeholder="댓글..." onkeydown="if(event.key==='Enter') addComment(this, 'comments-${id}')">
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            document.getElementById('post-container').insertAdjacentHTML('afterbegin', postHtml);
+            document.getElementById('post-title').value = ''; document.getElementById('post-body').value = '';
+            togglePostForm();
+        }
+
         function togglePost(header) {
             const content = header.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
+            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function addComment(input, listId) {
+            const list = document.getElementById(listId);
+            const li = document.createElement('li');
+            li.innerHTML = `<div style="margin:5px 0;"><b>익명:</b> ${input.value} <button class="reply-btn" onclick="addReply(this)">답글</button></div>`;
+            list.appendChild(li); input.value = '';
+        }
+
+        function addReply(btn) {
+            const text = prompt("답글을 입력하세요:");
+            if(text) {
+                const reply = document.createElement('div');
+                reply.className = 'reply-item';
+                reply.innerHTML = `↳ <b>준영쌤:</b> ${text}`;
+                btn.parentElement.appendChild(reply);
             }
         }
-
-        function addComment(inputElement, listId) {
-            const text = inputElement.value;
-            if (text.trim() === "") return;
-
-            const list = document.getElementById(listId);
-            const newItem = document.createElement("li");
-            newItem.className = "comment-item";
-            newItem.innerHTML = `<b>익명:</b> ${text} <button class="reply-btn" onclick="showReplyInput(this)">답글</button>`;
-            
-            list.appendChild(newItem);
-            inputElement.value = ""; // 입력창 초기화
-        }
-
-        function showReplyInput(btn) {
-            // 이미 대댓글 입력창이 있으면 생성하지 않음
-            if(btn.nextElementSibling && btn.nextElementSibling.className === 'reply-input-box') return;
-
-            const replyBox = document.createElement("div");
-            replyBox.className = "reply-input-box";
-            replyBox.style.marginTop = "5px";
-            replyBox.innerHTML = `
-                <input type="text" placeholder="대댓글 입력..." style="padding:5px; border:1px solid #ddd; border-radius:4px; width:70%;">
-                <button onclick="addReply(this)" style="padding:5px; cursor:pointer;">등록</button>
-            `;
-            btn.parentNode.appendChild(replyBox);
-        }
-
-        function addReply(submitBtn) {
-            const input = submitBtn.previousElementSibling;
-            const text = input.value;
-            if (text.trim() === "") return;
-
-            const parentLi = submitBtn.parentNode.parentNode; // comment-item
-            const replyDiv = document.createElement("div");
-            replyDiv.className = "reply-item";
-            replyDiv.innerHTML = `↳ <b>익명:</b> ${text}`;
-            
-            parentLi.appendChild(replyDiv);
-            submitBtn.parentNode.remove(); // 입력창 제거
-        }
     </script>
-
 </body>
 </html>
