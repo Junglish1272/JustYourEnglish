@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우독학원 영어강사 김준영</title>
+    <title>영어강사 김준영</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <style>
         :root {
@@ -12,11 +12,13 @@
             --bg-color: #F0F8FF;           
             --text-color: #333333;         
             --white: #ffffff;
+            --soft-gray: #f8f9fa;
         }
 
         body {
             font-family: 'Pretendard', sans-serif;
-            background-color: var(--bg-color);
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-attachment: fixed;
             color: var(--text-color);
             margin: 0; padding: 0;
             display: flex; flex-direction: column; min-height: 100vh;
@@ -25,199 +27,257 @@
         header {
             background-color: var(--white);
             text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 2px 10px rgba(111, 163, 239, 0.1);
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(111, 163, 239, 0.1);
         }
 
-        header h1 { margin: 0; color: var(--dark-blue); font-size: 1.8rem; }
-        header p { color: #777; margin-top: 5px; font-size: 0.95rem; }
+        header h1 { margin: 0; color: var(--dark-blue); font-size: 2rem; letter-spacing: -0.5px; }
+        header p { color: var(--primary-blue); margin-top: 8px; font-size: 1.1rem; font-weight: 700; }
 
         nav {
             display: flex; justify-content: center; flex-wrap: wrap;
-            gap: 10px; padding: 20px; background: var(--white);
-            border-bottom: 1px solid #e0e0e0;
+            gap: 12px; padding: 20px; background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .tab-btn {
-            background: none; border: 2px solid var(--bg-color);
-            padding: 10px 20px; border-radius: 30px;
-            cursor: pointer; font-size: 1rem; font-weight: 600;
-            color: #888; transition: 0.3s;
+            background: var(--white); border: 1px solid #e0e0e0;
+            padding: 10px 22px; border-radius: 30px;
+            cursor: pointer; font-size: 0.95rem; font-weight: 600;
+            color: #666; transition: 0.3s;
         }
 
         .tab-btn.active {
             background-color: var(--primary-blue);
             color: var(--white); border-color: var(--primary-blue);
-            box-shadow: 0 4px 10px rgba(111, 163, 239, 0.4);
+            box-shadow: 0 4px 12px rgba(111, 163, 239, 0.3);
         }
 
         main { flex: 1; max-width: 800px; margin: 30px auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
 
         .tab-content {
-            display: none; background: var(--white);
-            padding: 40px; border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            animation: fadeIn 0.5s ease;
+            display: none; background: rgba(255, 255, 255, 0.95);
+            padding: 40px; border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .tab-content.active { display: block; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        h2 { color: var(--dark-blue); border-bottom: 2px solid var(--bg-color); padding-bottom: 10px; margin-top: 0; }
-        .card-list { display: grid; gap: 15px; }
-        .card { background: var(--bg-color); padding: 15px; border-radius: 10px; border-left: 5px solid var(--primary-blue); }
-
-        /* --- 주간리포트 학생 탭 스타일 --- */
-        .student-tabs {
-            display: flex; gap: 5px; border-bottom: 2px solid #eee; margin-bottom: 20px; overflow-x: auto;
+        h2 { color: var(--dark-blue); border-bottom: 2px solid var(--bg-color); padding-bottom: 12px; margin-top: 0; font-size: 1.5rem; }
+        
+        .intro-header { text-align: center; margin-bottom: 40px; }
+        .intro-header .slogan { font-size: 1.8rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 5px; }
+        .intro-header .sub-slogan { font-size: 1.2rem; color: #555; font-weight: 500; }
+        
+        .img-wrapper {
+            width: 100%; max-width: 450px; margin: 30px auto;
+            border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            background-color: #eee;
         }
-        .st-tab {
-            padding: 10px 15px; border: none; background: none; cursor: pointer;
-            font-weight: bold; color: #999; border-bottom: 3px solid transparent; transition: 0.2s;
-        }
-        .st-tab.active { color: var(--primary-blue); border-bottom: 3px solid var(--primary-blue); }
-
-        .password-area { display: none; background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
-        .password-input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 150px; }
-        .submit-btn { padding: 10px 20px; background: var(--primary-blue); color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .instructor-img { width: 100%; display: block; object-fit: cover; }
         
-        .report-result { display: none; margin-top: 20px; border: 1px solid #eee; padding: 20px; border-radius: 10px; }
-        .score-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
-        .score-table th { background: var(--bg-color); text-align: center; width: 40%; padding: 10px; }
-        .score-table td { text-align: center; border-bottom: 1px solid #eee; padding: 10px; }
-
-        /* --- 아카이브 게시판 & 등록 버튼 스타일 --- */
-        .archive-controls { display: flex; justify-content: flex-end; margin-bottom: 20px; }
-        .btn-add-post { background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .profile-card { background: #fff; border-radius: 20px; padding: 30px; margin-top: 40px; border: 1px solid #f0f0f0; }
+        .profile-card h3 { margin-top: 0; color: #222; font-size: 1.4rem; margin-bottom: 15px; }
+        .edu-tag { display: inline-block; background: var(--bg-color); color: var(--dark-blue); padding: 5px 15px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; }
         
-        .post-form { display: none; background: #f0f4f8; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        .post-form input, .post-form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .partition-container { display: flex; flex-direction: column; gap: 25px; }
+        .partition { padding: 20px; border-radius: 15px; position: relative; }
+        .partition.current { background: #f0f7ff; border-left: 5px solid var(--primary-blue); }
+        .partition.past { background: #f9f9f9; border-left: 5px solid #ccc; }
+        .partition h4 { margin: 0 0 12px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; }
+        .partition ul { list-style: none; padding: 0; margin: 0; }
+        .partition li { font-size: 1.05rem; margin-bottom: 10px; color: #333; font-weight: 500; }
 
-        .post-item { border: 1px solid #eee; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
-        .post-header { background: var(--bg-color); padding: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .post-content { display: none; padding: 20px; background: white; border-top: 1px solid #eee; }
+        .system-section { margin-top: 50px; }
+        .system-card { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .system-card h4 { margin: 0 0 10px 0; color: var(--dark-blue); font-size: 1.15rem; }
+        .system-card p { margin: 0; color: #666; line-height: 1.7; font-size: 0.95rem; }
+
+        /* --- 진행중 수업 전용 스타일 --- */
+        .notice-info { background: #fdf2f2; border: 1px solid #ffcfcf; padding: 18px; border-radius: 12px; color: #d63031; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin-bottom: 25px; }
+        .winter-label { color: var(--dark-blue); font-size: 1.5rem; font-weight: 800; text-align: center; margin: 30px 0; border-top: 1px dashed #ddd; padding-top: 30px; }
         
-        .comment-section { margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ddd; }
-        .comment-input-area { display: flex; gap: 10px; margin-bottom: 15px; }
-        .comment-input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
-        .reply-item { margin-left: 20px; padding: 5px 0; background: #fafafa; border-radius: 4px; padding-left: 10px; color: #555; font-size: 0.85rem; }
-        .reply-btn { font-size: 0.8rem; color: var(--primary-blue); background: none; border: none; cursor: pointer; }
+        .class-card { background: #fff; border: 1px solid #eee; border-radius: 20px; padding: 25px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .class-card h3 { margin: 0 0 12px 0; color: #111; font-size: 1.3rem; }
+        .time-info { display: block; color: #555; font-size: 1.05rem; margin-bottom: 6px; font-weight: 500; }
+        .progress-box { background: #f8fbff; border-radius: 12px; padding: 18px; margin-top: 15px; border: 1px solid #e1ecf8; }
+        .progress-box span { color: var(--dark-blue); font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 8px; }
+        .progress-box ul { list-style: none; padding: 0; margin: 0; }
+        .progress-box li { color: #444; font-size: 0.95rem; margin-bottom: 4px; padding-left: 12px; position: relative; }
+        .progress-box li::before { content: "•"; position: absolute; left: 0; color: var(--primary-blue); }
+        .class-detail { font-size: 0.9rem; color: #777; margin-top: 12px; line-height: 1.5; }
 
-        footer { background-color: #3b4d61; color: var(--white); text-align: center; padding: 40px 20px; margin-top: auto; }
-        .footer-info { line-height: 1.8; font-size: 0.9rem; opacity: 0.9; }
-        .footer-logo { font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; display: block; }
+        footer { background-color: #2c3e50; color: var(--white); text-align: center; padding: 50px 20px; margin-top: auto; }
+        .footer-info { line-height: 2; font-size: 0.9rem; opacity: 0.8; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>우독학원 영어강사 김준영</h1>
-        <p>PATH TO PERFECTION</p>
+        <h1>영어강사 김준영</h1>
+        <p>Just Your English</p>
     </header>
 
     <nav>
-        <button class="tab-btn active" onclick="openTab('intro', this)">내 소개</button>
-        <button class="tab-btn" onclick="openTab('curriculum', this)">커리큘럼</button>
-        <button class="tab-btn" onclick="openTab('report', this)">주간리포트</button>
-        <button class="tab-btn" onclick="openTab('fame', this)">명예의 전당</button>
-        <button class="tab-btn" onclick="openTab('class', this)">진행중 수업</button>
-        <button class="tab-btn" onclick="openTab('archive', this)">준영아카이브</button>
+        <button class="tab-btn active" onclick="openTab('intro', this)">👨‍🏫 강사소개</button>
+        <button class="tab-btn" onclick="openTab('curriculum', this)">📚 커리큘럼</button>
+        <button class="tab-btn" onclick="openTab('report', this)">📊 주간리포트</button>
+        <button class="tab-btn" onclick="openTab('fame', this)">🏆 명예의 전당</button>
+        <button class="tab-btn" onclick="openTab('class', this)">⏰ 진행중 수업</button>
+        <button class="tab-btn" onclick="openTab('archive', this)">💾 준영아카이브</button>
     </nav>
 
     <main>
         <section id="intro" class="tab-content active">
-            <h2>👨‍🏫 강사 소개</h2>
-            <p style="font-size:1.1rem; line-height:1.8;">
-                안녕하세요, <strong>우독학원</strong>에서 영어를 가르치는 <strong>김준영 강사</strong>입니다.<br><br>
-                단순한 지식 전달을 넘어 아이들이 <b>스스로 공부하는 힘</b>을 길러주는 것을 목표로 합니다.
-            </p>
-        </section>
-
-        <section id="curriculum" class="tab-content">
-            <h2>📚 커리큘럼</h2>
-            <div class="card-list">
-                <div class="card"><h3>🌱 중등부</h3><p>내신 만점을 위한 문법 및 독해 기초 강화</p></div>
-                <div class="card"><h3>🚀 고등부</h3><p>수능 최저 등급 확보 및 전략적 문제풀이 훈련</p></div>
+            <div class="intro-header">
+                <div class="slogan">Just Your English</div>
+                <div class="sub-slogan">압도적 영어의 공식</div>
             </div>
-        </section>
-
-        <section id="report" class="tab-content">
-            <h2>📊 주간리포트 (학부모 전용)</h2>
-            <div class="student-tabs">
-                <button class="st-tab" onclick="selectStudentTab('김우독', this)">김우독</button>
-                <button class="st-tab" onclick="selectStudentTab('이영어', this)">이영어</button>
-                <button class="st-tab" onclick="selectStudentTab('박일등', this)">박일등</button>
-                <button class="st-tab" onclick="selectStudentTab('최성실', this)">최성실</button>
+            <div class="img-wrapper">
+                <img src="KakaoTalk_20251117_213611138.png" alt="김준영 강사 프로필" class="instructor-img" onerror="this.src='https://via.placeholder.com/450x600?text=Profile+Image'">
             </div>
-
-            <div id="pw-section" class="password-area">
-                <h3 id="selected-student-name">학생을 선택해주세요</h3>
-                <input type="password" id="input-pw" class="password-input" placeholder="비밀번호 (1234)">
-                <button class="submit-btn" onclick="checkPassword()">확인</button>
-                <p id="pw-error" style="color:red; display:none; margin-top:10px;">비밀번호가 틀렸습니다.</p>
+            <div class="profile-card">
+                <h3>김준영T 프로필</h3>
+                <div class="edu-tag">중앙대학교 영어영문학과 졸업</div>
+                <div class="partition-container">
+                    <div class="partition current">
+                        <h4>Current</h4>
+                        <ul><li>우독학원 영어 대표 강사</li></ul>
+                    </div>
+                    <div class="partition past">
+                        <h4>Past</h4>
+                        <ul>
+                            <li>대치명인학원 김포캠퍼스</li>
+                            <li>대치명인학원 검단캠퍼스</li>
+                            <li>JLS 고등부 대표 강사</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <div id="report-view" class="report-result">
-                <h3 id="report-title" style="color:var(--dark-blue);">📝 주간 리포트</h3>
-                <table class="score-table">
-                    <tr><th>출석</th><td>정상 출석</td></tr>
-                    <tr><th>단어 테스트</th><td>48/50</td></tr>
-                    <tr><th>과제 이행</th><td>완료</td></tr>
-                </table>
-                <div class="card" style="background:white;"><strong>강사 코멘트:</strong><br>성실하게 잘 따라오고 있습니다.</div>
-            </div>
-        </section>
-
-        <section id="fame" class="tab-content">
-            <h2>🏆 명예의 전당</h2>
-            <div class="card-list">
-                <div class="card">🥇 <strong>○○고 2학년 김XX</strong> - 전교 1등</div>
-                <div class="card">📈 <strong>△△중 3학년 이XX</strong> - 3등급 상승</div>
+            <div class="system-section">
+                <h2>⚡ Teaching System</h2>
+                <div class="system-card">
+                    <h4>(1) 압도적 독해의 공식</h4>
+                    <p>글의 구조와 독해적 장치를 통한 <b>“공식”이 있는 독해</b>. <br>“해석상, 문맥상 자연스럽다” 와 같은 추상적인 독해를 배웠던 학생들은 실력이 절대 늘 수 없습니다.</p>
+                </div>
+                <div class="system-card">
+                    <h4>(2) 매주 진행하는 진단평가 및 피드백 system</h4>
+                    <p>오답 분포 분석과 점수 그래프를 통한 <b>개인별 학습 코칭</b>으로 취약점을 정밀 타격합니다.</p>
+                </div>
+                <div class="system-card">
+                    <h4>(3) 1대1 케어</h4>
+                    <p>주간 상담 / 월간 상담을 통한 <b>개인별 맞춤 피드백 + 과제 + 멘탈케어</b>까지 밀착 관리합니다.</p>
+                </div>
             </div>
         </section>
 
         <section id="class" class="tab-content">
-            <h2>⏰ 현재 진행중인 수업</h2>
-            <table>
-                <tr style="background:#eee;"><th>반 이름</th><th>시간표</th></tr>
-                <tr><td>고2 수능집중반</td><td>월/수 18:00 - 21:00</td></tr>
-            </table>
-        </section>
-
-        <section id="archive" class="tab-content">
-            <h2>💾 준영아카이브</h2>
-            <div class="archive-controls">
-                <button class="btn-add-post" onclick="togglePostForm()">+ 게시글 등록</button>
+            <h2>⏰ 진행중인 수업</h2>
+            
+            <div class="notice-info">
+                * 시간표는 윈터 시간표로 학기 중 시간표와는 상이합니다.<br>
+                (학기 중 검단고1, 검단고2, 마전고1, 마전고2, 백석고1, 백석고2, 중2, 중3반 진행 예정입니다.)
             </div>
 
-            <div id="post-form" class="post-form">
-                <input type="text" id="post-title" placeholder="제목을 입력하세요">
-                <textarea id="post-body" rows="4" placeholder="내용을 입력하세요"></textarea>
-                <button class="submit-btn" onclick="addPost()">등록하기</button>
-            </div>
+            <div class="winter-label">❄️ 윈터 시간표</div>
 
-            <div id="post-container">
-                <div class="post-item">
-                    <div class="post-header" onclick="togglePost(this)"><span>📁 고난도 빈칸추론 공략법</span><span>▼</span></div>
-                    <div class="post-content">
-                        <p>빈칸추론 핵심 자료입니다.</p>
-                        <div class="comment-section">
-                            <ul id="comments-1" style="list-style:none; padding:0;"></ul>
-                            <div class="comment-input-area">
-                                <input type="text" class="comment-input" placeholder="댓글..." onkeydown="if(event.key==='Enter') addComment(this, 'comments-1')">
-                            </div>
-                        </div>
-                    </div>
+            <div class="class-card">
+                <h3>1. 예비고1 Intensive Class</h3>
+                <span class="time-info">화/목 (17시 – 19시): 윈터 과정</span>
+                <span class="time-info">토요일 (13시 – 15시) : 진단 평가 및 클리닉</span>
+                <div class="progress-box">
+                    <span>[CURRENT PROGRESS]</span>
+                    <ul>
+                        <li>화요일: 글의 구조와 기초 독해</li>
+                        <li>목요일: 구문의 길 Basic</li>
+                    </ul>
                 </div>
             </div>
+
+            <div class="class-card">
+                <h3>2. 예비고2 Highest Class</h3>
+                <span class="time-info">화/목 (20시 – 22시) : 윈터 과정 (3월부터 학교별 시간표로 수업이 진행됩니다.)</span>
+                <span class="time-info">토요일(10시30분 – 12시 30분) : 진단 평가 및 클리닉</span>
+                <div class="progress-box">
+                    <span>[CURRENT PROGRESS]</span>
+                    <ul>
+                        <li>화요일: 독해의 길 intensive</li>
+                        <li>목요일: 구문의 길 Basic</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <h3>3. 예비중3 Basic Class</h3>
+                <span class="time-info">화/목 (13시40분 – 15시40분) : 윈터 과정</span>
+                <span class="time-info">토요일 (13시 – 15시) : 진단 평가 및 클리닉</span>
+                <div class="progress-box">
+                    <span>[CURRENT PROGRESS]</span>
+                    <ul>
+                        <li>화요일: 글의 구조와 기초 독해</li>
+                        <li>목요일: 구문의 길 Basic</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <h3>4. 영어의 공식 – 문법편 (특강)</h3>
+                <span class="time-info">금요일 (16시-18시): 1월~2월 윈터 특강</span>
+                <div class="progress-box">
+                    <span>[CURRENT PROGRESS]</span>
+                    <ul>
+                        <li>1주차: 품사와 문장성분, 문장의 형식</li>
+                        <li>2주차: to 부정사와 동명사, 분사</li>
+                    </ul>
+                </div>
+                <p class="class-detail">난이도 중-최상의 문제들만 선별하여 내신 어법 및 수능 어법 유형에 대비합니다.</p>
+            </div>
+
+            <div class="class-card">
+                <h3>5. 영어의 공식 – 어휘편 (특강)</h3>
+                <span class="time-info">금요일 (18시 - 20시): 1월~2월 윈터 특강</span>
+                <div class="progress-box">
+                    <span>[CURRENT PROGRESS]</span>
+                    <ul>
+                        <li>1주차: 혼동하기 쉬운 어휘들 ~unit 5 / 내신 대비를 위한 반의어 총정리 – 인원별 상이</li>
+                        <li>2주차: 혼동하기 쉬운 어휘들 ~unit 10/ 내신 대비를 위한 반의어 총정리 – 인원별 상이</li>
+                    </ul>
+                </div>
+                <p class="class-detail" style="color:var(--dark-blue); font-weight:600;">*독해의 공식 or 문법 특강을 수강하는 학생들은 어휘 특강이 무료입니다.</p>
+            </div>
+
+            <div class="class-card">
+                <h3>6. 독해의 공식 – End Of Reading</h3>
+                <span class="time-info">금요일 (21시 - 23시)</span>
+                <div class="progress-box">
+                    <span>[CURRENT PROGRESS]</span>
+                    <ul>
+                        <li>1주차: 소재의 연속성 (오답률 60% 이상)</li>
+                        <li>2주차: 선지의 관계성 (최고 오답률 85%)</li>
+                    </ul>
+                </div>
+                <p class="class-detail">독해 특강은 고난이도 지문으로 수업을 진행하는 수업 특성상 강사의 판단하에 선별한 인원만 수강할 수 있습니다. 또한 1대1 솔루션을 위한 수강 인원 제한이 있습니다.</p>
+            </div>
         </section>
+
+        <section id="curriculum" class="tab-content"><h2>📚 커리큘럼</h2><p>준비 중입니다.</p></section>
+        <section id="report" class="tab-content"><h2>📊 주간리포트</h2><p>학생을 선택해주세요.</p></section>
+        <section id="fame" class="tab-content"><h2>🏆 명예의 전당</h2><p>업데이트 중입니다.</p></section>
+        <section id="archive" class="tab-content"><h2>💾 준영아카이브</h2><p>자료실입니다.</p></section>
     </main>
 
     <footer>
         <div class="footer-info">
-            <span class="footer-logo">우독학원</span>
-            📍 인천광역시 서구 원당대로 | 📞 학원: 032)719-4054 | 📱 김준영: 010)9434-9470
+            <strong>우독학원</strong><br>
+            📍 인천광역시 서구 원당대로 | 📞 학원: 032)719-4054<br>
+            📱 김준영: 010)9434-9470
         </div>
     </footer>
 
@@ -227,75 +287,7 @@
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(tabId).style.display = 'block';
             btn.classList.add('active');
-        }
-
-        // 주간리포트 학생 탭 선택
-        function selectStudentTab(name, btn) {
-            document.querySelectorAll('.st-tab').forEach(t => t.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById('pw-section').style.display = 'block';
-            document.getElementById('report-view').style.display = 'none';
-            document.getElementById('selected-student-name').innerText = name + " 학생 리포트";
-            document.getElementById('input-pw').value = '';
-        }
-
-        function checkPassword() {
-            if (document.getElementById('input-pw').value === '1234') {
-                document.getElementById('pw-section').style.display = 'none';
-                document.getElementById('report-view').style.display = 'block';
-            } else { alert('비밀번호가 틀렸습니다.'); }
-        }
-
-        // 아카이브 기능
-        function togglePostForm() {
-            const form = document.getElementById('post-form');
-            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
-        }
-
-        function addPost() {
-            const title = document.getElementById('post-title').value;
-            const body = document.getElementById('post-body').value;
-            if(!title || !body) return alert('제목과 내용을 입력하세요.');
-
-            const id = Date.now();
-            const postHtml = `
-                <div class="post-item">
-                    <div class="post-header" onclick="togglePost(this)"><span>📁 ${title}</span><span>▼</span></div>
-                    <div class="post-content">
-                        <p>${body}</p>
-                        <div class="comment-section">
-                            <ul id="comments-${id}" style="list-style:none; padding:0;"></ul>
-                            <div class="comment-input-area">
-                                <input type="text" class="comment-input" placeholder="댓글..." onkeydown="if(event.key==='Enter') addComment(this, 'comments-${id}')">
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            document.getElementById('post-container').insertAdjacentHTML('afterbegin', postHtml);
-            document.getElementById('post-title').value = ''; document.getElementById('post-body').value = '';
-            togglePostForm();
-        }
-
-        function togglePost(header) {
-            const content = header.nextElementSibling;
-            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
-        }
-
-        function addComment(input, listId) {
-            const list = document.getElementById(listId);
-            const li = document.createElement('li');
-            li.innerHTML = `<div style="margin:5px 0;"><b>익명:</b> ${input.value} <button class="reply-btn" onclick="addReply(this)">답글</button></div>`;
-            list.appendChild(li); input.value = '';
-        }
-
-        function addReply(btn) {
-            const text = prompt("답글을 입력하세요:");
-            if(text) {
-                const reply = document.createElement('div');
-                reply.className = 'reply-item';
-                reply.innerHTML = `↳ <b>준영쌤:</b> ${text}`;
-                btn.parentElement.appendChild(reply);
-            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
