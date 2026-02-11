@@ -7,9 +7,9 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <style>
         :root {
-            --primary-blue: #6FA3EF;       
-            --dark-blue: #4A90E2;          
-            --bg-color: #F0F8FF;           
+            --primary-gold: #D4AF37;       
+            --dark-gold: #996515;          
+            --bg-color: #FFFDF5;           
             --text-color: #333333;         
             --white: #ffffff;
             --soft-gray: #f8f9fa;
@@ -17,131 +17,153 @@
 
         body {
             font-family: 'Pretendard', sans-serif;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background: linear-gradient(135deg, #fdfbfb 0%, #f5f0e1 100%);
             background-attachment: fixed;
             color: var(--text-color);
             margin: 0; padding: 0;
             display: flex; flex-direction: column; min-height: 100vh;
         }
 
-        header {
-            background-color: var(--white);
-            text-align: center;
-            padding: 2.5rem 1rem;
-            box-shadow: 0 4px 15px rgba(111, 163, 239, 0.1);
-        }
-
-        header h1 { margin: 0; color: var(--dark-blue); font-size: 2rem; letter-spacing: -0.5px; }
-        header p { color: var(--primary-blue); margin-top: 8px; font-size: 1.1rem; font-weight: 700; }
-
         nav {
             display: flex; justify-content: center; flex-wrap: wrap;
-            gap: 12px; padding: 20px; background: rgba(255, 255, 255, 0.8);
+            gap: 12px; padding: 15px 20px; background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             position: sticky; top: 0; z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .tab-btn {
             background: var(--white); border: 1px solid #e0e0e0;
-            padding: 10px 22px; border-radius: 30px;
+            padding: 8px 20px; border-radius: 30px;
             cursor: pointer; font-size: 0.95rem; font-weight: 600;
             color: #666; transition: 0.3s;
         }
 
         .tab-btn.active {
-            background-color: var(--primary-blue);
-            color: var(--white); border-color: var(--primary-blue);
-            box-shadow: 0 4px 12px rgba(111, 163, 239, 0.3);
+            background-color: var(--primary-gold);
+            color: var(--white); border-color: var(--primary-gold);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
         }
+
+        header {
+            background-color: var(--white);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+        }
+
+        header h1 { margin: 0 0 15px 0; color: var(--dark-gold); font-size: 2rem; letter-spacing: -0.5px; }
+
+        .header-logo-container {
+            width: 150px; height: 150px; 
+            margin: 0 auto 10px; 
+            border-radius: 50%; 
+            overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 3px solid var(--primary-gold); 
+            background-color: #fff;
+        }
+        .header-logo-img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+
+        header p { color: var(--primary-gold); margin: 0; font-size: 1.1rem; font-weight: 700; }
 
         main { flex: 1; max-width: 800px; margin: 30px auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
 
         .tab-content {
-            display: none; background: rgba(255, 255, 255, 0.95);
+            display: none; background: rgba(255, 255, 255, 0.98);
             padding: 40px; border-radius: 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .tab-content.active { display: block; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        h2 { color: var(--dark-blue); border-bottom: 2px solid var(--bg-color); padding-bottom: 12px; margin-top: 0; font-size: 1.5rem; }
+        h2 { color: var(--dark-gold); border-bottom: 2px solid var(--bg-color); padding-bottom: 12px; margin-top: 0; font-size: 1.5rem; }
         
-        .intro-header { text-align: center; margin-bottom: 40px; }
-        .intro-header .slogan { font-size: 1.8rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 5px; }
-        .intro-header .sub-slogan { font-size: 1.2rem; color: #555; font-weight: 500; }
-        
-        .img-wrapper {
-            width: 100%; max-width: 450px; margin: 30px auto;
-            border-radius: 20px; overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            background-color: #eee;
-        }
-        .instructor-img { width: 100%; display: block; object-fit: cover; }
-        
-        .profile-card { background: #fff; border-radius: 20px; padding: 30px; margin-top: 40px; border: 1px solid #f0f0f0; }
+        .profile-card { background: #fff; border-radius: 20px; padding: 30px; margin-top: 20px; border: 1px solid #f0e6d2; }
         .profile-card h3 { margin-top: 0; color: #222; font-size: 1.4rem; margin-bottom: 15px; }
-        .edu-tag { display: inline-block; background: var(--bg-color); color: var(--dark-blue); padding: 5px 15px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; }
+        .edu-tag { display: inline-block; background: var(--bg-color); color: var(--dark-gold); padding: 5px 15px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; border: 1px solid rgba(212, 175, 55, 0.3); }
         
-        .partition-container { display: flex; flex-direction: column; gap: 25px; }
-        .partition { padding: 20px; border-radius: 15px; position: relative; }
-        .partition.current { background: #f0f7ff; border-left: 5px solid var(--primary-blue); }
+        .partition-container { display: flex; flex-direction: column; gap: 20px; }
+        .partition { padding: 15px; border-radius: 12px; }
+        .partition.current { background: #fffcf0; border-left: 5px solid var(--primary-gold); }
         .partition.past { background: #f9f9f9; border-left: 5px solid #ccc; }
-        .partition h4 { margin: 0 0 12px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; }
+        .partition h4 { margin: 0 0 10px 0; font-size: 0.8rem; text-transform: uppercase; font-weight: 800; color: #888; }
         .partition ul { list-style: none; padding: 0; margin: 0; }
-        .partition li { font-size: 1.05rem; margin-bottom: 10px; color: #333; font-weight: 500; }
+        .partition li { font-size: 1rem; margin-bottom: 6px; color: #333; font-weight: 600; }
 
         .system-section { margin-top: 50px; }
         .system-card { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .system-card h4 { margin: 0 0 10px 0; color: var(--dark-blue); font-size: 1.15rem; }
+        .system-card h4 { margin: 0 0 10px 0; color: var(--dark-gold); font-size: 1.15rem; }
         .system-card p { margin: 0; color: #666; line-height: 1.7; font-size: 0.95rem; }
 
-        /* --- 진행중 수업 전용 스타일 --- */
-        .notice-info { background: #fdf2f2; border: 1px solid #ffcfcf; padding: 18px; border-radius: 12px; color: #d63031; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin-bottom: 25px; }
-        .winter-label { color: var(--dark-blue); font-size: 1.5rem; font-weight: 800; text-align: center; margin: 30px 0; border-top: 1px dashed #ddd; padding-top: 30px; }
-        
+        .notice-info { background: #fff9eb; border: 1px solid #f3e5c2; padding: 18px; border-radius: 12px; color: #996515; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin-bottom: 25px; }
+        .winter-label { color: var(--dark-gold); font-size: 1.5rem; font-weight: 800; text-align: center; margin: 30px 0; border-top: 1px dashed #d4af37; padding-top: 30px; }
         .class-card { background: #fff; border: 1px solid #eee; border-radius: 20px; padding: 25px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         .class-card h3 { margin: 0 0 12px 0; color: #111; font-size: 1.3rem; }
         .time-info { display: block; color: #555; font-size: 1.05rem; margin-bottom: 6px; font-weight: 500; }
-        .progress-box { background: #f8fbff; border-radius: 12px; padding: 18px; margin-top: 15px; border: 1px solid #e1ecf8; }
-        .progress-box span { color: var(--dark-blue); font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 8px; }
+        .progress-box { background: #fffdf8; border-radius: 12px; padding: 18px; margin-top: 15px; border: 1px solid #f3e5c2; }
+        .progress-box span { color: var(--dark-gold); font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 8px; }
         .progress-box ul { list-style: none; padding: 0; margin: 0; }
         .progress-box li { color: #444; font-size: 0.95rem; margin-bottom: 4px; padding-left: 12px; position: relative; }
-        .progress-box li::before { content: "•"; position: absolute; left: 0; color: var(--primary-blue); }
-        .class-detail { font-size: 0.9rem; color: #777; margin-top: 12px; line-height: 1.5; }
+        .progress-box li::before { content: "•"; position: absolute; left: 0; color: var(--primary-gold); }
 
-        footer { background-color: #2c3e50; color: var(--white); text-align: center; padding: 50px 20px; margin-top: auto; }
-        .footer-info { line-height: 2; font-size: 0.9rem; opacity: 0.8; }
+        .report-sub-nav { display: flex; gap: 10px; margin-bottom: 20px; justify-content: flex-start; }
+        .sub-btn { background: #eee; border: none; padding: 8px 25px; border-radius: 10px; cursor: pointer; font-weight: 700; color: #666; transition: 0.2s; }
+        .sub-btn.active { background: var(--dark-gold); color: #fff; }
+        .sub-content { display: none; }
+        .sub-content.active { display: block; }
+
+        .student-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 20px; }
+        .student-btn { background: #fff; border: 1px solid #ddd; padding: 12px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: 0.2s; }
+        .student-btn:hover { background-color: var(--bg-color); border-color: var(--primary-gold); color: var(--dark-gold); }
+        
+        .report-detail-card { background: #fff; border: 2px solid var(--primary-gold); border-radius: 20px; padding: 30px; margin-top: 20px; animation: fadeIn 0.4s ease-out; }
+        .report-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-color); padding-bottom: 15px; margin-bottom: 25px; }
+        .report-header h3 { color: var(--dark-gold); margin: 0; font-size: 1.4rem; }
+        .back-btn { background: var(--soft-gray); border: 1px solid #ddd; padding: 5px 15px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+        
+        .week-nav { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 10px; }
+        .week-btn { background: #f0f0f0; border: none; padding: 6px 15px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; white-space: nowrap; font-weight: 600; }
+        .week-btn.active { background: var(--primary-gold); color: #fff; }
+
+        .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        .stat-box { background: #fffcf5; border: 1px solid #f3e5c2; border-radius: 15px; padding: 15px; }
+        .stat-box h4 { margin: 0 0 10px 0; font-size: 0.9rem; color: #888; }
+        .stat-value { font-size: 1.2rem; font-weight: 800; color: var(--dark-gold); }
+        
+        .feedback-area { background: #fdfdfd; border: 1px dotted var(--primary-gold); border-radius: 15px; padding: 20px; margin-top: 20px; }
+        .feedback-area h4 { margin: 0 0 10px 0; color: var(--dark-gold); }
+        .feedback-text { line-height: 1.8; color: #444; font-size: 0.95rem; }
+
+        footer { background-color: #3d311c; color: var(--white); text-align: center; padding: 50px 20px; margin-top: auto; }
     </style>
 </head>
 <body>
 
+    <nav>
+        <button class="tab-btn active" onclick="openTab('intro', this)">강사소개</button>
+        <button class="tab-btn" onclick="openTab('report', this)">주간리포트</button>
+        <button class="tab-btn" onclick="openTab('class', this)">진행중 수업</button>
+        <button class="tab-btn" onclick="openTab('archive', this)">준영아카이브</button>
+    </nav>
+
     <header>
         <h1>영어강사 김준영</h1>
+        <div class="header-logo-container">
+            <img src="KakaoTalk_20251021_193825776.jpg" alt="Logo" class="header-logo-img" onerror="this.src='https://via.placeholder.com/150'">
+        </div>
         <p>Just Your English</p>
     </header>
-
-    <nav>
-        <button class="tab-btn active" onclick="openTab('intro', this)">👨‍🏫 강사소개</button>
-        <button class="tab-btn" onclick="openTab('curriculum', this)">📚 커리큘럼</button>
-        <button class="tab-btn" onclick="openTab('report', this)">📊 주간리포트</button>
-        <button class="tab-btn" onclick="openTab('fame', this)">🏆 명예의 전당</button>
-        <button class="tab-btn" onclick="openTab('class', this)">⏰ 진행중 수업</button>
-        <button class="tab-btn" onclick="openTab('archive', this)">💾 준영아카이브</button>
-    </nav>
 
     <main>
         <section id="intro" class="tab-content active">
             <div class="intro-header">
-                <div class="slogan">Just Your English</div>
-                <div class="sub-slogan">압도적 영어의 공식</div>
-            </div>
-            <div class="img-wrapper">
-                <img src="KakaoTalk_20251117_213611138.png" alt="김준영 강사 프로필" class="instructor-img" onerror="this.src='https://via.placeholder.com/450x600?text=Profile+Image'">
+                <div class="slogan" style="color: #AA841B; font-weight: 800; font-size: 1.2rem;">Just Your English</div>
+                <div class="sub-slogan" style="color: #D4AF37; font-weight: 600;">압도적 영어의 공식</div>
             </div>
             <div class="profile-card">
                 <h3>김준영T 프로필</h3>
@@ -165,11 +187,11 @@
                 <h2>⚡ Teaching System</h2>
                 <div class="system-card">
                     <h4>(1) 압도적 독해의 공식</h4>
-                    <p>글의 구조와 독해적 장치를 통한 <b>“공식”이 있는 독해</b>. <br>“해석상, 문맥상 자연스럽다” 와 같은 추상적인 독해를 배웠던 학생들은 실력이 절대 늘 수 없습니다.</p>
+                    <p>글의 구조와 독해적 장치를 통한 <b>“공식”이 있는 독해</b>.</p>
                 </div>
                 <div class="system-card">
                     <h4>(2) 매주 진행하는 진단평가 및 피드백 system</h4>
-                    <p>오답 분포 분석과 점수 그래프를 통한 <b>개인별 학습 코칭</b>으로 취약점을 정밀 타격합니다.</p>
+                    <p>실전 같은 분위기 속에서 오답 분석과 점수 그래프로 취약점을 타격합니다.</p>
                 </div>
                 <div class="system-card">
                     <h4>(3) 1대1 케어</h4>
@@ -180,56 +202,45 @@
 
         <section id="class" class="tab-content">
             <h2>⏰ 진행중인 수업</h2>
-            
             <div class="notice-info">
                 * 시간표는 윈터 시간표로 학기 중 시간표와는 상이합니다.<br>
                 (학기 중 검단고1, 검단고2, 마전고1, 마전고2, 백석고1, 백석고2, 중2, 중3반 진행 예정입니다.)
             </div>
-
             <div class="winter-label">❄️ 윈터 시간표</div>
 
             <div class="class-card">
                 <h3>1. 예비고1 Intensive Class</h3>
-                <span class="time-info">화/목 (17시 – 19시): 윈터 과정</span>
-                <span class="time-info">토요일 (13시 – 15시) : 진단 평가 및 클리닉</span>
-                <div class="progress-box">
-                    <span>[CURRENT PROGRESS]</span>
-                    <ul>
-                        <li>화요일: 글의 구조와 기초 독해</li>
-                        <li>목요일: 구문의 길 Basic</li>
-                    </ul>
-                </div>
+                <span class="time-info">화/목 (17:00 – 19:00)</span>
+                <span class="time-info">토요일 (13:00 – 15:00) : 진단 평가 및 클리닉</span>
             </div>
 
             <div class="class-card">
                 <h3>2. 예비고2 Highest Class</h3>
-                <span class="time-info">화/목 (20시 – 22시) : 윈터 과정 (3월부터 학교별 시간표로 수업이 진행됩니다.)</span>
-                <span class="time-info">토요일(10시30분 – 12시 30분) : 진단 평가 및 클리닉</span>
-                <div class="progress-box">
-                    <span>[CURRENT PROGRESS]</span>
-                    <ul>
-                        <li>화요일: 독해의 길 intensive</li>
-                        <li>목요일: 구문의 길 Basic</li>
-                    </ul>
-                </div>
+                <span class="time-info">화/목 (20:00 – 22:00) : 윈터 과정</span>
+                <span class="time-info">토요일(10:30 – 12:30) : 진단 평가 및 클리닉</span>
             </div>
 
             <div class="class-card">
                 <h3>3. 예비중3 Basic Class</h3>
-                <span class="time-info">화/목 (13시40분 – 15시40분) : 윈터 과정</span>
-                <span class="time-info">토요일 (13시 – 15시) : 진단 평가 및 클리닉</span>
+                <span class="time-info">화/목 (13:40 – 15:40) : 윈터 과정</span>
+                <span class="time-info">토요일 (13:00 – 15:00) : 진단 평가 및 클리닉</span>
+            </div>
+
+            <div class="class-card">
+                <h3>4. 예비중2 Basic Class</h3>
+                <span class="time-info">월/수/금 (14:00 - 15:30) / 클리닉 (15:30 - 17:00)</span>
                 <div class="progress-box">
                     <span>[CURRENT PROGRESS]</span>
                     <ul>
-                        <li>화요일: 글의 구조와 기초 독해</li>
-                        <li>목요일: 구문의 길 Basic</li>
+                        <li>1주차: Unit1-3 : 관계대명사 기초</li>
+                        <li>2주차: 관계대명사 심화</li>
+                        <li>3주차: 관계대명사, 5형식</li>
                     </ul>
                 </div>
             </div>
 
             <div class="class-card">
-                <h3>4. 영어의 공식 – 문법편 (특강)</h3>
-                <span class="time-info">금요일 (16시-18시): 1월~2월 윈터 특강</span>
+                <h3>5. 영어의 공식 – 문법편 (특강)</h3> <span class="time-info">금요일 (16:00 - 18:00): 1월~2월 윈터 특강</span>
                 <div class="progress-box">
                     <span>[CURRENT PROGRESS]</span>
                     <ul>
@@ -237,48 +248,104 @@
                         <li>2주차: to 부정사와 동명사, 분사</li>
                     </ul>
                 </div>
-                <p class="class-detail">난이도 중-최상의 문제들만 선별하여 내신 어법 및 수능 어법 유형에 대비합니다.</p>
             </div>
 
             <div class="class-card">
-                <h3>5. 영어의 공식 – 어휘편 (특강)</h3>
-                <span class="time-info">금요일 (18시 - 20시): 1월~2월 윈터 특강</span>
+                <h3>6. 영어의 공식 – 어휘편 (특강)</h3>
                 <div class="progress-box">
                     <span>[CURRENT PROGRESS]</span>
                     <ul>
-                        <li>1주차: 혼동하기 쉬운 어휘들 ~unit 5 / 내신 대비를 위한 반의어 총정리 – 인원별 상이</li>
-                        <li>2주차: 혼동하기 쉬운 어휘들 ~unit 10/ 내신 대비를 위한 반의어 총정리 – 인원별 상이</li>
+                        <li>1주차: 혼동하기 쉬운 어휘들 ~unit 5</li>
+                        <li>2주차: 혼동하기 쉬운 어휘들 ~unit 10</li>
+                        <li>3주차: 혼동하기 쉬운 어휘들 ~unit 15</li>
+                        <li>4주차: 혼동하기 쉬운 어휘들 ~unit 25</li>
+                        <li>5주차: 혼동하기 쉬운 어휘들 ~unit 35</li>
                     </ul>
                 </div>
-                <p class="class-detail" style="color:var(--dark-blue); font-weight:600;">*독해의 공식 or 문법 특강을 수강하는 학생들은 어휘 특강이 무료입니다.</p>
             </div>
 
             <div class="class-card">
-                <h3>6. 독해의 공식 – End Of Reading</h3>
-                <span class="time-info">금요일 (21시 - 23시)</span>
+                <h3>7. 독해의 공식 – End Of Reading</h3>
                 <div class="progress-box">
                     <span>[CURRENT PROGRESS]</span>
                     <ul>
-                        <li>1주차: 소재의 연속성 (오답률 60% 이상)</li>
-                        <li>2주차: 선지의 관계성 (최고 오답률 85%)</li>
+                        <li>1주차: 소재의 연속성</li>
+                        <li>2주차: 선지의 관계성</li>
+                        <li>3주차: 킬러 문제의 논리도 똑같다 part1</li>
+                        <li>4주차: 킬러 문제의 논리도 똑같다 part2</li>
+                        <li>5주차: 실전 고3 풀이</li>
                     </ul>
                 </div>
-                <p class="class-detail">독해 특강은 고난이도 지문으로 수업을 진행하는 수업 특성상 강사의 판단하에 선별한 인원만 수강할 수 있습니다. 또한 1대1 솔루션을 위한 수강 인원 제한이 있습니다.</p>
             </div>
         </section>
 
-        <section id="curriculum" class="tab-content"><h2>📚 커리큘럼</h2><p>준비 중입니다.</p></section>
-        <section id="report" class="tab-content"><h2>📊 주간리포트</h2><p>학생을 선택해주세요.</p></section>
-        <section id="fame" class="tab-content"><h2>🏆 명예의 전당</h2><p>업데이트 중입니다.</p></section>
+        <section id="report" class="tab-content">
+            <div id="reportMain">
+                <h2>📊 주간리포트</h2>
+                <p>학생 이름을 클릭한 후 비밀번호(1024)를 입력해 주세요.</p>
+                <div class="report-sub-nav">
+                    <button class="sub-btn active" onclick="openSubTab('middle-school', this)">중등부</button>
+                    <button class="sub-btn" onclick="openSubTab('high-school', this)">고등부</button>
+                </div>
+                <div id="middle-school" class="sub-content active">
+                    <div class="student-grid">
+                        <script>
+                            const middleStudents = ["임서진", "박채은", "이승후", "배태랑", "강규온", "공태현", "김강인", "김윤호", "김재운", "오세홍", "이채훈", "정진우"];
+                            middleStudents.forEach(name => {
+                                document.write(`<button class="student-btn" onclick="checkPassword('${name}')">${name}</button>`);
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div id="high-school" class="sub-content">
+                    <div class="student-grid">
+                        <script>
+                            const highStudents = ["김유진", "정준", "송시후", "한상혁", "김래인", "박주은", "박현우", "이시현", "신종환", "이윤성", "이준성", "장하람", "석지현", "진하윤"];
+                            highStudents.forEach(name => {
+                                document.write(`<button class="student-btn" onclick="checkPassword('${name}')">${name}</button>`);
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reportDetail" style="display: none;">
+                <div class="report-detail-card">
+                    <div class="report-header">
+                        <h3 id="studentTitle">학생 리포트</h3>
+                        <button class="back-btn" onclick="closeReport()">뒤로가기</button>
+                    </div>
+                    
+                    <div class="week-nav">
+                        <button class="week-btn active" onclick="changeWeek(1, this)">2월 1주차</button>
+                        <button class="week-btn" onclick="changeWeek(2, this)">2월 2주차</button>
+                        <button class="week-btn" onclick="changeWeek(3, this)">2월 3주차</button>
+                        <button class="week-btn" onclick="changeWeek(4, this)">2월 4주차</button>
+                    </div>
+
+                    <div class="report-grid">
+                        <div class="stat-box">
+                            <h4>출결 및 과제</h4>
+                            <div class="stat-value" id="weekAttendance">출석: 100% / 완료</div>
+                        </div>
+                        <div class="stat-box">
+                            <h4>단어 테스트 (Vocabulary)</h4>
+                            <div class="stat-value" id="vocaScore">95 / 100</div>
+                        </div>
+                    </div>
+                    <div class="feedback-area">
+                        <h4>📝 <span id="weekTitle">2월 1주차</span> 피드백</h4>
+                        <div class="feedback-text" id="feedbackText">성실하게 수업에 참여하고 있습니다.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="archive" class="tab-content"><h2>💾 준영아카이브</h2><p>자료실입니다.</p></section>
     </main>
 
     <footer>
-        <div class="footer-info">
-            <strong>우독학원</strong><br>
-            📍 인천광역시 서구 원당대로 | 📞 학원: 032)719-4054<br>
-            📱 김준영: 010)9434-9470
-        </div>
+        <strong>우독학원</strong> | 김준영: 010)9434-9470
     </footer>
 
     <script>
@@ -287,7 +354,37 @@
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(tabId).style.display = 'block';
             btn.classList.add('active');
+            if(tabId === 'report') closeReport();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function openSubTab(subId, btn) {
+            document.querySelectorAll('.sub-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(subId).classList.add('active');
+            btn.classList.add('active');
+        }
+        function checkPassword(name) {
+            const pw = prompt(`${name} 학생의 리포트 조회를 위해 비밀번호를 입력해 주세요.`, "");
+            if (pw === "1024") { showReport(name); }
+            else if (pw !== null) { alert("비밀번호가 일치하지 않습니다."); }
+        }
+        function showReport(name) {
+            document.getElementById('reportMain').style.display = 'none';
+            document.getElementById('reportDetail').style.display = 'block';
+            document.getElementById('studentTitle').innerText = `✨ ${name} 학생 주간 학습 리포트`;
+            changeWeek(1, document.querySelector('.week-btn'));
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function changeWeek(week, btn) {
+            document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('weekTitle').innerText = `2월 ${week}주차`;
+            document.getElementById('vocaScore').innerText = `${91 + week} / 100`;
+            document.getElementById('feedbackText').innerText = `2월 ${week}주차 학습 피드백 데이터입니다.`;
+        }
+        function closeReport() {
+            document.getElementById('reportDetail').style.display = 'none';
+            document.getElementById('reportMain').style.display = 'block';
         }
     </script>
 </body>
