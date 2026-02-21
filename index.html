@@ -32,7 +32,6 @@
             padding: 20px;
         }
 
-        /* 메인 내비게이션 스타일 고정 */
         nav {
             display: flex;
             justify-content: center;
@@ -131,7 +130,6 @@
         .progress-box li { margin-bottom: 5px; position: relative; padding-left: 15px; }
         .progress-box li::before { content: "•"; position: absolute; left: 0; color: var(--accent-color); }
 
-        /* 서브 탭(중등/고등) 전용 스타일 */
         .sub-tab-nav { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
         .sub-tab-btn {
             background: #d1d9e6; border: none; padding: 10px 30px; 
@@ -225,7 +223,7 @@
             <div class="grid-2">
                 <div class="card curriculum-card"><h3>독해의 길</h3><p>글의 구조를 통한 정확한 독해. 독해적 장치를 통해 수학같이 풀리는 독해를 완성합니다. 지문의 논리를 스스로 깨우치고 유형 별 풀이법을 통해 지문을 바라보는 시선을 기릅니다.</p></div>
                 <div class="card curriculum-card"><h3>문법의 길</h3><p>정확한 문장 구성을 바라보는 시선을 기릅니다. 어법을 '개념'으로 이해하고 '서술형'으로 출력하는 훈련을 통해 고등 내신에 흔들리지 않는 문법기초를 완성합니다.</p></div>
-                <div class="card curriculum-card"><h3>구문의 길</h3><p>단순 해석이 아닌, 문장의 논리를 같이 보는 시간. 단순한 주어·동사 찾기가 아닌, 문장의 관계성과 논리를 깨닫는 수업으로 국어 비문학 독해력까지 향상되는 수업을 추구합니다.</p></div>
+                <div class="card curriculum-card"><h3>구문의 길</h3><p>단순 해석이 아닌, 문장의 논리를 같이 보는 시간. 단순한 주어·동사 찾기가 아닌, 문장의 관계성과 논리를 깨닫는 수업으로 국어 비문학 독해력까지 향상되는 영어 구문 수업을 추구합니다.</p></div>
                 <div class="card curriculum-card"><h3>어휘의 길</h3><p>실력에 맞는 개별 단어장과 누적 테스트 시스템을 통해 한번 외운 단어는 절대 잊지 않도록 철저히 관리합니다.</p></div>
             </div>
         </section>
@@ -240,7 +238,7 @@
                     <h3>4. 예비중2 Basic</h3><p>월/수/금 14:00-15:30 / 클리닉 15:30-17:00</p>
                     <div class="progress-box"><ul><li>1~3주차: 관계대명사 기초, 심화, 5형식</li></ul></div>
                 </div>
-                <div class="card"><h3>5. 영어의 공식(문법)</h3><p>금요일 16:00-18:00 (윈터 특강)</p><div class="progress-box"><ul><li>1~2주차: 품사, 문장성분, to부정사, 동명사, 분사</li></ul></div></div>
+                <div class="card"><h3>5. 영어의 공식(문법)</h3><p>금요일 16:00-18:00 (윈터 특강)</p><div class="progress-box"><ul><li>1~2주차: 품사와 문장성분, 문장의 형식, to 부정사, 동명사, 분사</li></ul></div></div>
                 <div class="card"><h3>6. 영어의 공식(어휘)</h3><p>금요일 18:00-20:00 (윈터 특강)</p><div class="progress-box"><ul><li>1~5주차: 혼동 어휘 (~unit 35)</li></ul></div></div>
                 <div class="card"><h3>7. End Of Reading</h3><p>금요일 21:00-23:00</p><div class="progress-box"><ul><li>1~5주차: 킬러 문제 논리, 실전 고3 풀이</li></ul></div></div>
             </div>
@@ -249,7 +247,6 @@
         <section id="report" class="tab-content">
             <div id="reportMain">
                 <h2 style="text-align:center;">Weekly Student Report</h2>
-                <p style="text-align:center; color:var(--text-muted)">비밀번호 <strong>1024</strong>를 입력하세요.</p>
                 <div class="sub-tab-nav">
                     <button class="sub-tab-btn active" onclick="openSubTab('middle-school', this)">중등부</button>
                     <button class="sub-tab-btn" onclick="openSubTab('high-school', this)">고등부</button>
@@ -265,7 +262,8 @@
                 <div id="high-school" class="sub-content">
                     <div class="student-grid">
                         <script>
-                            const highS = ["김유진", "정준", "송시후", "한상혁", "김래인", "박주은", "박현우", "이시현", "신종환", "이윤성", "이준성", "장하람", "석지현", "진하윤"];
+                            // 최세빈 추가
+                            const highS = ["김유진", "정준", "송시후", "한상혁", "김래인", "박주은", "박현우", "이시현", "신종환", "이윤성", "이준성", "장하람", "석지현", "진하윤", "이온유", "권아영", "강병욱", "김승현", "김민우", "한승민", "김재윤", "최세빈"];
                             highS.forEach(n => document.write(`<button class="student-btn" onclick="checkPassword('${n}')">${n}</button>`));
                         </script>
                     </div>
@@ -285,10 +283,10 @@
                         <button class="week-btn" onclick="changeWeek(4, this)">2월 4주차</button>
                     </div>
                     <div class="grid-2">
-                        <div class="card" style="margin-bottom:0;"><span>단어 테스트 점수</span><div id="vocaScore" style="font-size:1.5rem; font-weight:800; color:var(--primary-blue)">95 / 100</div></div>
-                        <div class="card" style="margin-bottom:0;"><span>출결 및 과제</span><div style="font-size:1.2rem; font-weight:700;">출석 100% / 완료</div></div>
+                        <div class="card" style="margin-bottom:0;"><span>단어 테스트 (Vocabulary)</span><div id="vocaScore" style="font-size:1.5rem; font-weight:800; color:var(--primary-blue)">- / 100</div></div>
+                        <div class="card" style="margin-bottom:0;"><span>출결 및 과제</span><div id="attendanceStatus" style="font-size:1.2rem; font-weight:700;">-</div></div>
                     </div>
-                    <div class="card" style="margin-top:20px;"><h4 id="weekTitle">2월 1주차 피드백</h4><p id="feedbackText">성실하게 수업에 참여하고 있습니다.</p></div>
+                    <div class="card" style="margin-top:20px;"><h4 id="weekTitle">2월 1주차 피드백</h4><p id="feedbackText" style="color:var(--text-muted); font-style: italic;">업데이트 중입니다.</p></div>
                 </div>
             </div>
         </section>
@@ -309,63 +307,144 @@
 </div>
 
 <script>
-    // 메인 탭 전환 함수
-    function openTab(tabId, btn) {
-        // 모든 컨텐츠 숨기기
-        const contents = document.querySelectorAll('.tab-content');
-        contents.forEach(c => {
-            c.classList.remove('active');
-            c.style.display = 'none'; // 명시적으로 숨김
-        });
+    /* ============================================================ */
+    /* [데이터 paste 구역] 리포트 생성기 코드를 이 아래에 붙여넣으세요 */
+    /* ============================================================ */
+    const reportDB = { "임서진": {}, "박채은": {}, "이승후": {}, "배태랑": {}, "강규온": {}, "공태현": {}, "김강인": {}, "김윤호": {}, "김재운": {}, "오세홍": {}, "이채훈": {}, "정진우": {}, "김유진": {}, "정준": {}, "송시후": {}, "한상혁": {}, "김래인": {}, "박주은": {}, "박현우": {}, "이시현": {}, "신종환": {}, "이윤성": {}, "이준성": {}, "장하람": {}, "석지현": {}, "진하윤": {}, "이온유": {}, "권아영": {}, "강병욱": {}, "김승현": {}, "김민우": {}, "한승민": {}, "김재윤": {}, "최세빈": {} };
 
-        // 모든 메인 버튼 비활성화
+    /* --- 데이터 붙여넣는 곳 (여기에 복사한 코드를 한 줄씩 계속 추가하세요) --- */
+    reportDB["김래인"]["2"] = {"voca":"144/150","attend":"100","feedback":"영어에 시간 확보가 조금은 부족한 경향이 있습니다. 시기 상 타 과목에 집중이 필요한 시기라 정규 수업, S-CLASS를 통해 최대한 잡아가려고 합니다. 순서 배열 유형에서 약점은 어느  정도 잡힌 상태이며, 남은 기간 동안 문장 삽입 유형에 집중할 예정입니다. ","photo":""};
+
+    reportDB["박채은"]["2"] = {"voca":"98/100","attend":"100","feedback":"단어 테스트 및 수업 태도 양호합니다.\n\n한 학년 위 수업을 수강하고 있는데,70% 정도만 따라올 수만 있다면 학년 대비 영어 체력을 많이 확보할 수 있다고 판단하여 꾸준히 잡아서 끌고 갈 예정입니다. 문법 상태는 양호하며 독해, 구문에서 약점이 있습니다. 2월 달은 구문/독해 위주로 학습할 예정이며 3월부터는 내신 대비와 동시에 중등 문법 진행할 예정입니다. ","photo":""};
+
+    reportDB["이승후"]["2"] = {"voca":"177/180","attend":"100","feedback":"단어, 과제 상태 매우 양호하며, 수업 이해도 및 집중력 또한 좋습니다.  \n\n자체 교재 통하여 고등 문법 총 정리 + 문풀 진행하였으며, 현재 구문, 독해 수업 진행 중입니다. \n\n진단 평가 총 2회 응시하였고, 2회 추가로 진행하여 총 4회 응시 예정입니다. \n진단 평가 성적표는 2월 말 제공해드릴 예정입니다.\n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""};
+
+    reportDB["정준"]["2"] = {"voca":"146/150","attend":"100","feedback":"수업 태도 및 과제 상태 양호합니다. \n1월 달에는 문법 1회독 및 기초 구문/독해 진행하였습니다. 2월에는 기존 내용에 추가적으로 변형 문제 대비 및 모의 내신 평가 진행할 예정입니다.","photo":""};
+
+    reportDB["송시후"]["2"] = {"voca":"149/150","attend":"100","feedback":"수업 태도 및 과제 상태 매우 좋습니다. 학습에 대한 열정이 있는 학생입니다. \n\n1월 달에는 기초 구문/독해 진행하였습니다. 2월에는 기존 내용에 추가적으로 변형 문제 대비 및 모의 내신 평가 진행할 예정입니다.\n\n시후 같은 경우 문법적인 부분은 어느 정도 채워져 고교 내신 대비가 가능한 수준까지 올라왔습니다. 하지만, 더 시급한 건 모의고사에서 보이는 약점입니다. 사실 고교 내신은 교과서 보다는 모의고사 지문에서 출제가 5배 이상 많이 됩니다. 이는 물리적으로 암기가 힘드니 변형이 되었을 때 결국 아이들은 내신 대비를 방명했던 중심 내용 + 모의고사의 풀이력을 가지고 문제를 풀어갑니다. \n\n무엇보다도 모의고사 대비, 즉 독해 수업을 제대로 들어본 적이 기존까지 없었던 시후의 경우 조금은 우려스러운 부분도 있습니다. 물론 또래 학생들에 비해 독해 이해력, 서술형 대비가 탄탄해 안심이 되는 부분도 많으니 너무 걱정하지 않으셔도 될 것 같습니다. 개학 전까지 이 부분을 신경 써 끝까지 챙겨보겠습니다. \n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""};
+
+    reportDB["박주은"]["2"] = {"voca":"150/144","attend":"100","feedback":"수업 태도 및 과제 성취도 매우 양호합니다. 비교적 최근에 수업을 듣기 시작했지만, 글의 구조 및 문제 풀이법에 대한 습득력이 빠릅니다. 조금만 다듬어 준다면, 고교 내신에서의 성적 향상도 기대해볼 수 있을 것 같습니다. \n\n주은이 같은 경우 다른 것보다 수업 시간표 상 저랑 1대1로 수업을 진행하고 있는데, 이 시기를 잘 이용해야 합니다. 빈틈이 있는 부분에서 최대한 디테일을 챙겨갈 수 있도록 노력 해보겠습니다.\n\n\n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""}; 
+
+    reportDB["박현우"]["2"] = {"voca":"148/150","attend":"100","feedback":"과제 이행도 및 수업 상태 양호 합니다. \n\n기초 구문/ 기초 독해 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n\n현우의 경우, 진단 평가 1회 차에 비해 점수가 눈에 띄게 향상 되었습니다. \n\n2월 한 달 문법, 구문 통한 영어 기초 체력에 더욱 집중할 예정입니다. \n\n\n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""}; 
+
+    reportDB["이시현"]["2"] = {"voca":"147/150","attend":"100","feedback":"과제 이행도 및 수업 상태 양호 합니다. \n\n 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n","photo":""};
+
+    reportDB["신종환"]["2"] = {"voca":"141/150","attend":"100","feedback":"과제 이행도 및 수업 상태 양호 합니다. \n\n 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n","photo":""};
+
+    reportDB["이윤성"]["2"] = {"voca":"141/150","attend":"100","feedback":"과제 이행도 및 수업 상태 양호 합니다. \n\n 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n\n윤성이는 병결로 인해 빠지는 회차가 많아 보강 영상 및 개별 질문으로 빈틈이 생기지 않도록 보강할 예정입니다. ","photo":""};
+
+    reportDB["이준성"]["2"] = {"voca":"150/150","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n\n 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n\n준성이는 글의 중심과, 구조를 통한 독해를 반복적으로 강조하고 있으며, S클래스 통한 1대1 피드백에서 조금씩 잡아가는 과정에 있습니다. 2월 달도 이 부분에 중심을 두고 계속 지도할 예정입니다. ","photo":""};
+
+    reportDB["장하람"]["2"] = {"voca":"150/150","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n\n 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n\n하람이는 기본 영어 체력이 많이 부족한 경향이 있습니다. 수업 외적으로 추가적으로 구문 연습을 통해 교정하고 있고, 2월도 마찬가지로, 구문, 해석, 중심내용 잡기를 따로 진행할 예정입니다. ","photo":""};
+
+    reportDB["석지현"]["2"] = {"voca":"150/150","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n\n 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n\n지현이를 가르친 지 1년 정도 된 것 같습니다. 처음 3등급부터 1등급에 이어 이번 진단평가 에서는 98점을 기록했습니다. \n지금은 안정적으로 성적을 유지하는 방향으로 학습 설정을 두고 있습니다.\n\n다만, 가끔 듣기나 마킹 실수로 오답이 생기는 경우가 있어 이 부분만 신경 쓴다면 큰 문제는 없다고 보사면 될 것 같습니다. ","photo":""};
+
+    reportDB["진하윤"]["2"] = {"voca":"120/150","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n\n 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n\n하윤이는 기본적인 영어 체력이 부족한 학생입니다. \n이에 맞춰, 기초 구문, 기초 문법, 기초 독해를 통하여 영어의 베이스를 쌓는데 집중하고 있습니다. 2월도 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. \n\n종종 단어를 암기해오지 않는 경우가 있습니다. 수업 후 추가 암기를 시켜 단어 대비를 하고 있지만, 미리 외워오는 습관을 기를 필요가 있습니다. ","photo":""};
+
+reportDB["김윤호"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
+
+reportDB["이채훈"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
+
+reportDB["오세홍"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
+
+reportDB["정진우"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
+
+reportDB["배태랑"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
+
+reportDB["공태현"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
+
+reportDB["김재운"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
+
+reportDB["강규온"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. \n\n규온이 학습태도가 많이 좋아진게 눈에 보입니다. 원욱쌤이랑 말씀을 나눠봐도 규온이는 타고난 부분이 있는 친구라 옆에서 관리만 된다면 기대해봐도 좋을 것 같다는 생각이 듭니다. 근데 멘탈적인 부분은 항상 신경을 써줘야하는 학생이라, 원욱쌤이랑 상의 후 같이 관리하는 그림을 그려보려고 합니다. ","photo":""};    
+
+reportDB["김강인"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. \n\n강인이는 학습 태도가 매우 좋습니다. 양방향 수업이 가능한 친구라 조금만 마음 먹는다면 금방 늘지 않을까 싶습니다.","photo":""};
+
+reportDB["김유진"]["3"] = {"voca":"91","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 유진이는 기본적인 영어 체력이 부족한 학생입니다. 조금만 더 일찍 왔으면 좋았을거란 아쉬움은 있지만, 이에 맞춰, 기초 구문, 기초 문법, 기초 독해를 통하여 영어의 베이스를 쌓는데 집중하고 있습니다. 남은 2월도 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. ","photo":""};
+
+reportDB["한상혁"]["3"] = {"voca":"98","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 상혁이는 기본적인 영어 체력이 갖춰져 있는 학생입니다. 조금만 더 일찍 와서 저한테 독해를 배웠으면 좋았겠다는 아쉬움은 있지만, 이에 맞춰, 기초 독해, 유형별 풀이법, 글의 구조를 통하여 영어 독해에 집중하고 있습니다. 남은 2월도 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. ","photo":""};
+
+reportDB["이온유"]["3"] = {"voca":"98","attend":"100","feedback":"안녕하세요 처음 인사드립니다. \n첫 수업에서는 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 독해의 구조나 풀이 법 학습은 본격적으로 처음 해보는 학생인데, 조금만 더 일찍 와서 저한테 독해를 배웠으면 좋았겠다는 아쉬움은 있지만, 이에 맞춰, 기초 독해, 유형별 풀이법, 글의 구조를 통하여 영어 독해에 집중할 예정입니다. 남은 2월과 3월 내신 기간 전까지 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. ","photo":""};
+
+reportDB["임서진"]["3"] = {"voca":"87","attend":"100","feedback":"수업 상태 매우 양호 합니다. 고1 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 서진이는 기본적인 영어 체력이 어느 정도 갖춰진 학생입니다. 거기에 추가적인 영어 머리가 있는 학생입니다. 이에 맞춰, 기초 구문, 기초 문법, 기초 독해를 통하여 영어의 베이스를 쌓는데 집중하고 있습니다. 2월도 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. \n\n다만, 종종 단어를 암기해오지 않는 경우가 있습니다. 수업 후 추가 암기를 시켜 단어 대비를 하고 있지만, 미리 외워오는 습관을 기를 필요가 있습니다. ","photo":""};
+
+
+    /* ============================================================ */
+
+    // 학생별 비밀번호 객체 추가 (요청 1)
+    const passwordDB = {
+        "김윤호": "4281", "이채훈": "9678", "오세홍": "8026", "정진우": "0383", 
+        "배태랑": "3522", "공태현": "9517", "김재운": "2206", "강규온": "0585", 
+        "김강인": "0989", "이승후": "9874", "정준": "4604", "송시후": "6147", 
+        "김유진": "8388", "임서진": "0857", "한상혁": "1111", "진하윤": "4934", 
+        "이윤성": "2722", "박현우": "3461", "석지현": "7977", "김래인": "4130", 
+        "신종환": "6434", "이시현": "6523", "이준성": "0281", "장하람": "8285", 
+        "박주은": "0728", "박채은": "1376", "최세빈": "1377"
+    };
+
+    let currentStudent = ""; 
+
+    function openTab(tabId, btn) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(c => { c.classList.remove('active'); c.style.display = 'none'; });
         const navBtns = document.querySelectorAll('.nav-btn');
         navBtns.forEach(b => b.classList.remove('active'));
-
-        // 선택된 컨텐츠 보이기
         const selectedContent = document.getElementById(tabId);
         selectedContent.classList.add('active');
-        selectedContent.style.display = 'block'; // 명시적으로 보임
-        
-        // 버튼 활성화
+        selectedContent.style.display = 'block';
         btn.classList.add('active');
-
-        // 리포트 상세 페이지 초기화
         if(tabId === 'report') closeReport();
-        
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // 주간리포트 내 중등/고등 서브 탭 전환
     function openSubTab(subId, btn) {
         const subContents = document.querySelectorAll('.sub-content');
         subContents.forEach(c => c.classList.remove('active'));
-        
         const subBtns = document.querySelectorAll('.sub-tab-btn');
         subBtns.forEach(b => b.classList.remove('active'));
-
         document.getElementById(subId).classList.add('active');
         btn.classList.add('active');
     }
 
+    // 비밀번호 체크 로직 수정 (요청 1)
     function checkPassword(name) {
-        const pw = prompt(`${name} 학생 리포트 비밀번호(1024)를 입력하세요.`, "");
-        if (pw === "1024") { showReport(name); }
-        else if (pw !== null) { alert("비밀번호가 틀렸습니다."); }
+        const pw = prompt(`${name} 학생 리포트 비밀번호를 입력하세요.`, "");
+        if (pw === passwordDB[name]) { 
+            currentStudent = name; 
+            showReport(name); 
+        } else if (pw !== null) { 
+            alert("비밀번호가 일치하지 않습니다."); 
+        }
     }
 
     function showReport(name) {
         document.getElementById('reportMain').style.display = 'none';
         document.getElementById('reportDetail').style.display = 'block';
         document.getElementById('studentTitle').innerText = `✨ ${name} 학생 학습 리포트`;
+        changeWeek(1, document.querySelector('.week-btn'));
     }
 
     function changeWeek(week, btn) {
         document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         document.getElementById('weekTitle').innerText = `2월 ${week}주차 피드백`;
-        document.getElementById('vocaScore').innerText = `${90 + week} / 100`;
-        document.getElementById('feedbackText').innerText = `2월 ${week}주차 상세 학습 피드백 데이터가 로드되었습니다.`;
+        
+        const data = reportDB[currentStudent] && reportDB[currentStudent][week];
+        const vocaEl = document.getElementById('vocaScore');
+        const attendEl = document.getElementById('attendanceStatus');
+        const feedEl = document.getElementById('feedbackText');
+
+        if(data) {
+            vocaEl.innerText = data.voca.includes('/') ? data.voca : `${data.voca} / 100`;
+            attendEl.innerText = data.attend;
+            feedEl.innerHTML = data.feedback || "피드백 내용이 없습니다.";
+            if(data.photo) {
+                feedEl.innerHTML += `<br><img src="${data.photo}" style="width:100%; border-radius:10px; margin-top:15px; border: 1px solid #ddd;">`;
+            }
+        } else {
+            vocaEl.innerText = `- / 100`;
+            attendEl.innerText = `-`;
+            feedEl.innerText = `해당 주차의 상세 피드백 데이터가 아직 업데이트되지 않았습니다.`;
+        }
     }
 
     function closeReport() {
