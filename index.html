@@ -149,7 +149,7 @@
 
         .report-detail-card { background: white; padding: 40px; border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .week-nav { display: flex; gap: 8px; margin-bottom: 25px; overflow-x: auto; padding-bottom: 10px; }
-        .week-btn { background: var(--soft-gray); border: none; padding: 8px 18px; border-radius: 20px; font-weight: 700; cursor: pointer; }
+        .week-btn { background: var(--soft-gray); border: none; padding: 8px 18px; border-radius: 20px; font-weight: 700; cursor: pointer; white-space: nowrap; }
         .week-btn.active { background: var(--primary-blue); color: white; }
 
         .cta-button {
@@ -409,7 +409,7 @@
                 <div id="high-school" class="sub-content">
                     <div class="student-grid">
                         <script>
-                            const highS = ["김유진", "정준", "송시후", "한상혁", "김래인", "박주은", "박현우", "이시현", "신종환", "이윤성", "이준성", "장하람", "석지현", "진하윤", "이온유", "권아영", "최세빈", "정지훈", "감유헌", "정예원", "원하율", "조영서", "조현서"];
+                            const highS = ["김유진", "정준", "송시후", "한상혁", "김래인", "박주은", "박현우", "이시현", "신종환", "이윤성", "이준성", "장하람", "석지현", "진하윤", "이온유", "권아영", "최세빈", "정지훈", "감유헌", "원하율", "조영서", "조현서", "김예원", "정예훈"];
                             highS.forEach(n => document.write(`<button class="student-btn" onclick="checkPassword('${n}')">${n}</button>`));
                         </script>
                     </div>
@@ -422,17 +422,31 @@
                         <h3 id="studentTitle" style="color:var(--primary-blue); margin:0;">학생 리포트</h3>
                         <button class="nav-btn" onclick="closeReport()" style="padding:5px 15px;">닫기</button>
                     </div>
-                    <div class="week-nav">
-                        <button class="week-btn active" onclick="changeWeek(1, this)">2월 1주차</button>
-                        <button class="week-btn" onclick="changeWeek(2, this)">2월 2주차</button>
-                        <button class="week-btn" onclick="changeWeek(3, this)">2월 3주차</button>
-                        <button class="week-btn" onclick="changeWeek(4, this)">2월 4주차</button>
+                    
+                    <div class="sub-tab-nav" style="justify-content: flex-start; margin-bottom: 10px;">
+                        <button class="sub-tab-btn" id="btnMonth2" onclick="showMonth('2')">2월</button>
+                        <button class="sub-tab-btn active" id="btnMonth3" onclick="showMonth('3')">3월</button>
                     </div>
+
+                    <div class="week-nav" id="weeks2" style="display: none; margin-bottom: 25px;">
+                        <button class="week-btn" onclick="changeWeek('1', this)">2월 1주차</button>
+                        <button class="week-btn" onclick="changeWeek('2', this)">2월 2주차</button>
+                        <button class="week-btn" onclick="changeWeek('3', this)">2월 3주차</button>
+                        <button class="week-btn" onclick="changeWeek('4', this)">2월 4주차</button>
+                    </div>
+
+                    <div class="week-nav" id="weeks3" style="margin-bottom: 25px;">
+                        <button class="week-btn active" onclick="changeWeek('3-1', this)">3월 1주차</button>
+                        <button class="week-btn" onclick="changeWeek('3-2', this)">3월 2주차</button>
+                        <button class="week-btn" onclick="changeWeek('3-3', this)">3월 3주차</button>
+                        <button class="week-btn" onclick="changeWeek('3-4', this)">3월 4주차</button>
+                    </div>
+
                     <div class="grid-2">
                         <div class="card" style="margin-bottom:0;"><span>단어 테스트 (Vocabulary)</span><div id="vocaScore" style="font-size:1.5rem; font-weight:800; color:var(--primary-blue)">- / 100</div></div>
                         <div class="card" style="margin-bottom:0;"><span>출결 및 과제</span><div id="attendanceStatus" style="font-size:1.2rem; font-weight:700;">-</div></div>
                     </div>
-                    <div class="card" style="margin-top:20px;"><h4 id="weekTitle">2월 1주차 피드백</h4><p id="feedbackText" style="color:var(--text-muted); font-style: italic;">업데이트 중입니다.</p></div>
+                    <div class="card" style="margin-top:20px;"><h4 id="weekTitle">3월 1주차 피드백</h4><p id="feedbackText" style="color:var(--text-muted); font-style: italic;">업데이트 중입니다.</p></div>
                 </div>
             </div>
         </section>
@@ -551,7 +565,7 @@
 <script>
     const reportDB = { 
         "임서진": {}, "박채은": {}, "이승후": {}, "배태랑": {}, "강규온": {}, "공태현": {}, "김강인": {}, "김윤호": {}, "김재운": {}, "오세홍": {}, "이채훈": {}, "정진우": {}, "차예은": {},
-        "김유진": {}, "정준": {}, "송시후": {}, "한상혁": {}, "김래인": {}, "박주은": {}, "박현우": {}, "이시현": {}, "신종환": {}, "이윤성": {}, "이준성": {}, "장하람": {}, "석지현": {}, "진하윤": {}, "이온유": {}, "권아영": {}, "최세빈": {}, "정지훈": {}, "감유헌": {}, "정예원": {}, "원하율": {}, "조영서": {}, "조현서": {}
+        "김유진": {}, "정준": {}, "송시후": {}, "한상혁": {}, "김래인": {}, "박주은": {}, "박현우": {}, "이시현": {}, "신종환": {}, "이윤성": {}, "이준성": {}, "장하람": {}, "석지현": {}, "진하윤": {}, "이온유": {}, "권아영": {}, "최세빈": {}, "정지훈": {}, "감유헌": {}, "원하율": {}, "조영서": {}, "조현서": {}, "김예원": {}, "정예훈": {}
     };
 
     /* --- 데이터 (중략 - 기존 데이터 유지) --- */
@@ -576,9 +590,9 @@
     reportDB["배태랑"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
     reportDB["공태현"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
     reportDB["김재운"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 처음 인사 드립니다. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. ","photo":""};
-    reportDB["강규온"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. \n\n규온이 학습태도가 많이 좋아진게 눈에 보입니다. 원욱쌤이랑 말씀을 나눠봐도 규온이는 타고난 부분이 있는 친구라 옆에서 관리만 된다면 기대해봐도 좋을 것 같다는 생각이 듭니다. 근데 멘탈적인 부분은 항상 신경을 써줘야하는 학생이라, 원욱쌤이랑 상의 후 같이 관리하는 그림을 그려보려고 합니다. ","photo":""};    
+    reportDB["강규온"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. \n\n규온이 학습태도가 많이 좋아진게 눈에 보입니다. 원욱쌤이랑 말씀을 나눠봐도 규온이는 타고난 부분이 있는 친구라 옆에서 관리만 된다면 기대해봐도 좋을 것 같다는 생각이 듭니다. 근데 멘탈적인 부분은 항상 신경을 써줘야하는 학생이라, 원욱쌤이랑 상의 후 같이 관리하는 그림을 그려보려고 합니다. ","photo":""};  
     reportDB["김강인"]["3"] = {"voca":"","attend":"100","feedback":"안녕하세요. 앞으로 공지 사항과 학생 성취도 평가는 주간 리포트를 통해 전달해드릴 예정입니다. \n\n전반적으로 아이들이 문법 기초가 부족하다고 판단해, 2월-3월은 문법 기초를 학습할 예정입니다. 이후 내신 기간을 마친 후 기초 구문을 시작해 여름 방학까지 기초 구문을 학습하여 영어 기초에 대비할 예정입니다. \n\n현재 unit1(문장의 형식) ~ untit6(감각동사) 까지 완료된 상태입니다. \n\n강인이는 학습 태도가 매우 좋습니다. 양방향 수업이 가능한 친구라 조금만 마음 먹는다면 금방 늘지 않을까 싶습니다.","photo":""};
-    reportDB["김유진"]["3"] = {"voca":"91","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 유진이는 기본적인 영어 체력이 부족한 학생입니다. 조금만 더 일찍 왔으면 좋았을거란 아쉬움은 있지만, 이에 맞춰, 기초 구문, 기초 문법, 기초 독해를 통하여 영어의 베이스를 쌓는데 집중하고 있습니다. 남은 2월도 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. ","photo":""};
+    reportDB["김유진"]["3"] = {"voca":"91","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 유진이는 기본적인 영어 체력이 부족한 학생입니다. 조금만 더 일찍 왔으면 좋았을거란 아쉬움은 있지만, 이에 맞춰, 기초 구문, 기초 문법, 기초 독해를 통하여 영어의 베이스를 쌓는데 집중하고 정기적 상담을 통해 동기부여를 진행 중입니다. ","photo":""};
     reportDB["한상혁"]["3"] = {"voca":"98","attend":"100","feedback":"과제 이행도 및 수업 상태 매우 양호 합니다. \n빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 상혁이는 기본적인 영어 체력이 갖춰져 있는 학생입니다. 조금만 더 일찍 와서 저한테 독해를 배웠으면 좋았겠다는 아쉬움은 있지만, 이에 맞춰, 기초 독해, 유형별 풀이법, 글의 구조를 통하여 영어 독해에 집중하고 있습니다. 남은 2월도 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. ","photo":""};
     reportDB["이온유"]["3"] = {"voca":"98","attend":"100","feedback":"안녕하세요 처음 인사드립니다. \n첫 수업에서는 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. 독해의 구조나 풀이 법 학습은 본격적으로 처음 해보는 학생인데, 조금만 더 일찍 와서 저한테 독해를 배웠으면 좋았겠다는 아쉬움은 있지만, 이에 맞춰, 기초 독해, 유형별 풀이법, 글의 구조를 통하여 영어 독해에 집중할 예정입니다. 남은 2월과 3월 내신 기간 전까지 마찬가지로 이런 부분을 신경 쓰며 지도할 계획입니다. ","photo":""};
     reportDB["배태랑"]["4"] = {"voca":"","attend":"100","feedback":"학습 내용: 이번 주에는 **UNIT 6(오감동사)**부터 **UNIT 9(명사의 수량화)**까지 진도를 나갔습니다. 감각을 표현하는 동사의 쓰임과 셀 수 있는/없는 명사의 수량 표현 등 기초 문법의 핵심적인 부분을 꼼꼼히 다루었습니다.\n\n수업 태도 및 특이사항: 전반적인 수업 참여도와 태도는 매우 좋습니다. 다만, 최근 동갑내기 친구들과 함께 수업을 듣다 보니 장난이 조금 과해지는 경우가 종종 발생하고 있습니다. 아이들이 즐겁게 공부하는 것도 중요하지만, 학습 집중력을 잃지 않도록 적절히 절제시키며 지도하고 있습니다.","photo":""};
@@ -615,8 +629,9 @@
         "이윤성": "2722", "박현우": "3461", "석지현": "7977", "김래인": "4130", 
         "신종환": "6434", "이시현": "6523", "이준성": "0281", "장하람": "8285", 
         "박주은": "0728", "박채은": "1376", "최세빈": "1377",
-        "차예은": "0000", "정지훈": "0000", "감유헌": "0000", "정예원": "0000",
-        "원하율": "0000", "조영서": "0000", "조현서": "0000", "이온유": "0000",
+        "차예은": "0000", "정지훈": "3078", "감유헌": "1836", 
+        "원하율": "9520", "조영서": "6545", "조현서": "6545", "이온유": "6342",
+        "김예원": "8929", "정예훈": "7678"
     };
 
     let currentStudent = ""; 
@@ -657,15 +672,31 @@
         document.getElementById('reportMain').style.display = 'none';
         document.getElementById('reportDetail').style.display = 'block';
         document.getElementById('studentTitle').innerText = `✨ ${name} 학생 학습 리포트`;
-        changeWeek(1, document.querySelector('.week-btn'));
+        
+        showMonth('3'); // 기본으로 3월 표시
     }
 
-    function changeWeek(week, btn) {
+    function showMonth(month) {
+        document.getElementById('weeks2').style.display = 'none';
+        document.getElementById('weeks3').style.display = 'none';
+        document.getElementById('btnMonth2').classList.remove('active');
+        document.getElementById('btnMonth3').classList.remove('active');
+
+        document.getElementById('weeks' + month).style.display = 'flex';
+        document.getElementById('btnMonth' + month).classList.add('active');
+        
+        const firstWeekBtn = document.querySelector(`#weeks${month} .week-btn`);
+        if(firstWeekBtn) firstWeekBtn.click();
+    }
+
+    function changeWeek(weekKey, btn) {
         document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        document.getElementById('weekTitle').innerText = `2월 ${week}주차 피드백`;
         
-        const data = reportDB[currentStudent] && reportDB[currentStudent][week];
+        let label = btn.innerText;
+        document.getElementById('weekTitle').innerText = `${label} 피드백`;
+        
+        const data = reportDB[currentStudent] && reportDB[currentStudent][weekKey];
         const vocaEl = document.getElementById('vocaScore');
         const attendEl = document.getElementById('attendanceStatus');
         const feedEl = document.getElementById('feedbackText');
