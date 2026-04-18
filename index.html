@@ -417,7 +417,6 @@
                 <div id="middle-school" class="sub-content active">
                     <div class="student-grid">
                         <script>
-                            // 강규온, 차예은 제외됨
                             const midS = ["임서진", "박채은", "이승후", "배태랑", "공태현", "김강인", "김윤호", "김재운", "오세홍", "이채훈", "정진우"];
                             midS.forEach(n => document.write(`<button class="student-btn" onclick="checkPassword('${n}')">${n}</button>`));
                         </script>
@@ -426,7 +425,7 @@
                 <div id="high-school" class="sub-content">
                     <div class="student-grid">
                         <script>
-                            const highS = ["김유진", "정준", "송시후", "한상혁", "김래인", "박주은", "박현우", "이시현", "신종환", "이윤성", "이준성", "장하람", "석지현", "진하윤", "이온유", "권아영", "최세빈", "정지훈", "감유헌", "원하율", "조영서", "조현서", "김예원", "정예훈"];
+                            const highS = ["김유진", "정준", "송시후", "한상혁", "김래인", "박주은", "박현우", "이시현", "신종환", "이윤성", "이준성", "장하람", "석지현", "진하윤", "이온유", "이태윤", "권아영", "최세빈", "정지훈", "감유헌", "원하율", "조영서", "조현서", "김예원", "정예훈"];
                             highS.forEach(n => document.write(`<button class="student-btn" onclick="checkPassword('${n}')">${n}</button>`));
                         </script>
                     </div>
@@ -441,29 +440,21 @@
                     </div>
                     
                     <div class="sub-tab-nav" style="justify-content: flex-start; margin-bottom: 10px;">
-                        <button class="sub-tab-btn" id="btnMonth2" onclick="showMonth('2')">2월</button>
-                        <button class="sub-tab-btn active" id="btnMonth3" onclick="showMonth('3')">3월</button>
+                        <button class="sub-tab-btn active" id="btnMonth4" onclick="showMonth('4')">4월</button>
                     </div>
 
-                    <div class="week-nav" id="weeks2" style="display: none; margin-bottom: 25px;">
-                        <button class="week-btn" onclick="changeWeek('1', this)">2월 1주차</button>
-                        <button class="week-btn" onclick="changeWeek('2', this)">2월 2주차</button>
-                        <button class="week-btn" onclick="changeWeek('3', this)">2월 3주차</button>
-                        <button class="week-btn" onclick="changeWeek('4', this)">2월 4주차</button>
-                    </div>
-
-                    <div class="week-nav" id="weeks3" style="margin-bottom: 25px;">
-                        <button class="week-btn active" onclick="changeWeek('3-1', this)">3월 1주차</button>
-                        <button class="week-btn" onclick="changeWeek('3-2', this)">3월 2주차</button>
-                        <button class="week-btn" onclick="changeWeek('3-3', this)">3월 3주차</button>
-                        <button class="week-btn" onclick="changeWeek('3-4', this)">3월 4주차</button>
+                    <div class="week-nav" id="weeks4" style="margin-bottom: 25px;">
+                        <button class="week-btn" onclick="changeWeek('4-1', this)">4월 1주차</button>
+                        <button class="week-btn active" onclick="changeWeek('4-2', this)">4월 2주차</button>
+                        <button class="week-btn" onclick="changeWeek('4-3', this)">4월 3주차</button>
+                        <button class="week-btn" onclick="changeWeek('4-4', this)">4월 4주차</button>
                     </div>
 
                     <div class="grid-2">
                         <div class="card" style="margin-bottom:0;"><span>단어 테스트 (Vocabulary)</span><div id="vocaScore" style="font-size:1.5rem; font-weight:800; color:var(--primary-blue)">- / 100</div></div>
                         <div class="card" style="margin-bottom:0;"><span>출결 및 과제</span><div id="attendanceStatus" style="font-size:1.2rem; font-weight:700;">-</div></div>
                     </div>
-                    <div class="card" style="margin-top:20px;"><h4 id="weekTitle">3월 1주차 피드백</h4><p id="feedbackText" style="color:var(--text-muted); font-style: italic;">업데이트 중입니다.</p></div>
+                    <div class="card" style="margin-top:20px;"><h4 id="weekTitle">4월 2주차 피드백</h4><p id="feedbackText" style="color:var(--text-muted); font-style: italic;">업데이트 중입니다.</p></div>
                 </div>
             </div>
         </section>
@@ -498,7 +489,7 @@
                 </div>
                 <div class="card">
                     <div class="process-title"><i class="fa-solid fa-fire"></i> 시험 1주 전 + 직전 보강</div>
-                    <p><strong>최종 마무리:</strong><br>핵심 요약 직보 자료 + 학교별 실전 모의고사 3회 + 동형 모의고사 풀이를 통해 빈틈 없는 완성을 이뤄냅니다.</p>
+                    <p><strong>최종 마무리:</strong><br>핵심 요약 직보 자료 + 학교별 실전 모의고사 3회 + 동형 모의고사 풀호를 통해 빈틈 없는 완성을 이뤄냅니다.</p>
                     <p style="margin-top: 10px;"><strong>직전 보강:</strong><br>강사가 직접 선별한 예상 문제 풀이와 전범위 1회독 및 예상 유형 정리를 합니다.</p>
                 </div>
             </div>
@@ -582,16 +573,16 @@
 <script>
     const reportDB = { 
         "임서진": {}, "박채은": {}, "이승후": {}, "배태랑": {}, "강규온": {}, "공태현": {}, "김강인": {}, "김윤호": {}, "김재운": {}, "오세홍": {}, "이채훈": {}, "정진우": {}, "차예은": {},
-        "김유진": {}, "정준": {}, "송시후": {}, "한상혁": {}, "김래인": {}, "박주은": {}, "박현우": {}, "이시현": {}, "신종환": {}, "이윤성": {}, "이준성": {}, "장하람": {}, "석지현": {}, "진하윤": {}, "이온유": {}, "권아영": {}, "최세빈": {}, "정지훈": {}, "감유헌": {}, "원하율": {}, "조영서": {}, "조현서": {}, "김예원": {}, "정예훈": {}
+        "김유진": {}, "정준": {}, "송시후": {}, "한상혁": {}, "김래인": {}, "박주은": {}, "박현우": {}, "이시현": {}, "신종환": {}, "이윤성": {}, "이준성": {}, "장하람": {}, "석지현": {}, "진하윤": {}, "이온유": {}, "이태윤": {}, "권아영": {}, "최세빈": {}, "정지훈": {}, "감유헌": {}, "원하율": {}, "조영서": {}, "조현서": {}, "김예원": {}, "정예훈": {}
     };
 
-    /* --- 데이터 (중략 - 기존 데이터 유지) --- */
+    /* --- 데이터 (기존 데이터 유지) --- */
     reportDB["김래인"]["1"] = {"voca":"144/150","attend":"100","feedback":"영어에 시간 확보가 조금은 부족한 경향이 있습니다. 시기 상 타 과목에 집중이 필요한 시기라 정규 수업, S-CLASS를 통해 최대한 잡아가려고 합니다. 순서 배열 유형에서 약점은 어느  정도 잡힌 상태이며, 남은 기간 동안 문장 삽입 유형에 집중할 예정입니다. ","photo":""};
     reportDB["박채은"]["1"] = {"voca":"98/100","attend":"100","feedback":"단어 테스트 및 수업 태도 양호합니다.\n\n한 학년 위 수업을 수강하고 있는데,70% 정도만 따라올 수만 있다면 학년 대비 영어 체력을 많이 확보할 수 있다고 판단하여 꾸준히 잡아서 끌고 갈 예정입니다. 문법 상태는 양호하며 독해, 구문에서 약점이 있습니다. 2월 달은 구문/독해 위주로 학습할 예정이며 3월부터는 내신 대비와 동시에 중등 문법 진행할 예정입니다. ","photo":""};
     reportDB["이승후"]["1"] = {"voca":"177/180","attend":"100","feedback":"단어, 과제 상태 매우 양호하며, 수업 이해도 및 집중력 또한 좋습니다.  \n\n자체 교재 통하여 고등 문법 총 정리 + 문풀 진행하였으며, 현재 구문, 독해 수업 진행 중입니다. \n\n진단 평가 총 2회 응시하였고, 2회 추가로 진행하여 총 4회 응시 예정입니다. \n진단 평가 성적표는 2월 말 제공해드릴 예정입니다.\n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""};
     reportDB["정준"]["1"] = {"voca":"146/150","attend":"100","feedback":"수업 태도 및 과제 상태 양호합니다. \n1월 달에는 문법 1회독 및 기초 구문/독해 진행하였습니다. 2월에는 기존 내용에 추가적으로 변형 문제 대비 및 모의 내신 평가 진행할 예정입니다.","photo":""};
     reportDB["송시후"]["1"] = {"voca":"149/150","attend":"100","feedback":"수업 태도 및 과제 상태 매우 좋습니다. 학습에 대한 열정이 있는 학생입니다. \n\n1월 달에는 기초 구문/독해 진행하였습니다. 2월에는 기존 내용에 추가적으로 변형 문제 대비 및 모의 내신 평가 진행할 예정입니다.\n\n시후 같은 경우 문법적인 부분은 어느 정도 채워져 고교 내신 대비가 가능한 수준까지 올라왔습니다. 하지만, 더 시급한 건 모의고사에서 보이는 약점입니다. 사실 고교 내신은 교과서 보다는 모의고사 지문에서 출제가 5배 이상 많이 됩니다. 이는 물리적으로 암기가 힘드니 변형이 되었을 때 결국 아이들은 내신 대비를 방명했던 중심 내용 + 모의고사의 풀이력을 가지고 문제를 풀어갑니다. \n\n무엇보다도 모의고사 대비, 즉 독해 수업을 제대로 들어본 적이 기존까지 없었던 시후의 경우 조금은 우려스러운 부분도 있습니다. 물론 또래 학생들에 비해 독해 이해력, 서술형 대비가 탄탄해 안심이 되는 부분도 많으니 너무 걱정하지 않으셔도 될 것 같습니다. 개학 전까지 이 부분을 신경 써 끝까지 챙겨보겠습니다. \n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""};
-    reportDB["박주은"]["1"] = {"voca":"150/144","attend":"100","feedback":"수업 태도 및 과제 성취도 매우 양호합니다. 비교적 최근에 수업을 듣기 시작했지만, 글의 구조 및 문제 풀이법에 대한 습득력이 빠릅니다. 조금만 다듬어 준다면, 고교 내신에서의 성적 향상도 기대해볼 수 있을 것 같습니다. \n\n주은이 같은 경우 다른 것보다 수업 시간표 상 저랑 1대1로 수업을 진행하고 있는데, 이 시기를 잘 이용해야 합니다. 빈틈이 있는 부분에서 최대한 디테일을 챙겨갈 수 있도록 노력 해보겠습니다.\n\n\n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""}; 
+    reportDB["박주은"]["1"] = {"voca":"150/144","attend":"100","feedback":"수업 태도 및 과제 성취도 매우 양호합니다. 비교적 최근에 수업을 듣기 시작했지만, 글의 구조 및 문제 풀이법에 대한 습득력이 빠릅니다. 조금만 다듬어 준다면, 고교 내신에서의 성적 향상도 기대해볼 수 있을 단 같습니다. \n\n주은이 같은 경우 다른 것보다 수업 시간표 상 저랑 1대1로 수업을 진행하고 있는데, 이 시기를 잘 이용해야 합니다. 빈틈이 있는 부분에서 최대한 디테일을 챙겨갈 수 있도록 노력 해보겠습니다.\n\n\n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""}; 
     reportDB["박현우"]["1"] = {"voca":"148/150","attend":"100","feedback":"과제 이행도 및 수업 상태 양호 합니다. \n\n기초 구문/ 기초 독해 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n\n현우의 경우, 진단 평가 1회 차에 비해 점수가 눈에 띄게 향상 되었습니다. \n\n2월 한 달 문법, 구문 통한 영어 기초 체력에 더욱 집중할 예정입니다. \n\n\n\n* 상담이 필요한 학부모님께서는 홈페이지 하단 상담 버튼을 통해 상담이 가능합니다. (전화 상담 포함)","photo":""}; 
     reportDB["이시현"]["1"] = {"voca":"147/150","attend":"100","feedback":"과제 이행도 및 수업 상태 양호 합니다. \n\n2월 1주차 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n","photo":""};
     reportDB["신종환"]["1"] = {"voca":"141/150","attend":"100","feedback":"과제 이행도 및 수업 상태 양호 합니다. \n\n2월 1주차 고2 빈칸 유형, 삽입 진행 하였으며, 순서 배열 및 문장 삽입 추가 지문을 통해 글의 구조를 추가적으로 학습하였습니다. \n","photo":""};
@@ -664,7 +655,6 @@
         reportDB[student]["3-3"] = {"voca":"-", "attend":"100", "feedback":feedback3_3_special, "photo":""};
     });
 
-    // 2. 새롭게 추가 요청된 중등부 특정 인원 3월 1~3주차 피드백
     const targetStudentsTarget2 = ["배태랑", "공태현", "김강인", "김윤호", "김재운", "오세홍", "이채훈", "정진우"];
     const feedbackTarget2_3_1 = "비내신 및 방학 기간 동안 우리 아이들의 전반적인 영어 체력을 끌어올리기 위해 총 3가지 클래스로 세분화하여 수업이 진행됩니다.<br><br>■ 월요일 [기초 문법]: 중등 내신 대비를 위한 필수 기초 문법을 탄탄하게 다집니다.<br>■ 수요일 [Clinic Class]: 구문 및 문법 문제 풀이와 함께 '진단 평가'를 매주 진행합니다. 진단 평가는 영어 모의고사 형식으로 출제되며, 이를 직접 풀어봄으로써 독해력, 구문 파악, 그리고 글의 구조를 읽어내는 방법을 훈련합니다. 고등 내신에는 모의고사가 반드시 포함되기 때문에, 중등부 때부터 이를 미리 경험하고 완벽하게 대비하는 것이 핵심 목표입니다.<br>■ 금요일 [구문의 길 - 기초편]: 문장의 구성과 핵심 성분을 바탕으로 구문 분석 훈련을 진행합니다. 고등 내신에서 서술형 문항은 1, 2등급을 가르는 결정적인 기준이 됩니다. 이를 위해 문장을 쪼개고 다시 조립하는 훈련을 반복하며, 지금부터 서술형에 대한 완벽한 대비를 시작하겠습니다.";
     
@@ -679,7 +669,6 @@
         reportDB[student]["3-3"] = {"voca":"-", "attend":"100", "feedback":fbTarget2_3_3, "photo":""};
     });
 
-    // 3. 새롭게 추가 요청된 특정 인원 3월 1~3주차 피드백
     const targetStudentsTarget3 = ["임서진", "박채은", "이승후"];
     const fb3_1 = "3월 1주차 수업 진행 내용입니다.<br><br>■ 화요일 [독해의 길]: 22년 3월 고1 모의고사 킬러 문항 및 고2 지문을 다루며, 고난도 지문에 대한 독해력과 논리적 접근법을 훈련했습니다.<br>■ 목요일 [구문의 길]: 교재 56~62번 문항을 통해 '부사절 접속사'의 핵심 문법 개념을 정리하고, 문장 내에서 어떻게 쓰이는지 구문 분석을 진행했습니다.";
     
@@ -694,6 +683,44 @@
         reportDB[student]["3-3"] = {"voca":"-", "attend":"100", "feedback":fb3_3, "photo":""};
     });
 
+
+    /* --- 신규 추가 요청된 4월 리포트 세팅 --- */
+    
+    const fb_base_baekseok1 = "안녕하십니까. 영어강사 김준영입니다.<br><br>백석고1 4월 1~2주차 학습 안내드립니다.<br>이번 주차에는 2025년 3월 고1 모의고사 40번 지문까지 정밀 분석을 완료하였으며, 전 유형 복습 문제 풀이 및 백석고1 학교 동형 모의고사 응시까지 모두 마무리하였습니다.<br><br>";
+
+    if (!reportDB["이태윤"]) reportDB["이태윤"] = {};
+    reportDB["이태윤"]["4-1"] = {"voca":"-", "attend":"100", "feedback": fb_base_baekseok1 + "태윤이의 경우, 이번 모의고사 분석 및 문제 풀이 과정에서 <b>어법 유형</b>에 다소 취약한 부분을 보였습니다. 이를 완벽하게 보완하기 위해 태윤이 맞춤형 추가 문제를 배부하였고 풀이를 완료했습니다. 가정에서도 많은 격려 부탁드립니다.", "photo":""};
+    reportDB["이태윤"]["4-2"] = reportDB["이태윤"]["4-1"];
+
+    if (!reportDB["정지훈"]) reportDB["정지훈"] = {};
+    reportDB["정지훈"]["4-1"] = {"voca":"-", "attend":"100", "feedback": fb_base_baekseok1 + "지훈이의 경우, 이번 모의고사 분석 및 문제 풀이 과정에서 <b>어법 및 어휘 유형</b>에 다소 취약한 부분을 보였습니다. 이를 완벽하게 보완하기 위해 지훈이 맞춤형 추가 문제를 배부하였고 풀이를 완료했습니다. 가정에서도 많은 격려 부탁드립니다.", "photo":""};
+    reportDB["정지훈"]["4-2"] = reportDB["정지훈"]["4-1"];
+
+    if (!reportDB["이온유"]) reportDB["이온유"] = {};
+    reportDB["이온유"]["4-1"] = {"voca":"-", "attend":"100", "feedback": fb_base_baekseok1 + "온유의 경우, 이번 모의고사 분석 및 문제 풀이 과정에서 <b>어휘 및 어법 유형</b>에 다소 취약한 부분을 보였습니다. 이를 완벽하게 보완하기 위해 온유 맞춤형 추가 문제를 배부하였고 풀이를 완료했습니다. 가정에서도 많은 격려 부탁드립니다.", "photo":""};
+    reportDB["이온유"]["4-2"] = reportDB["이온유"]["4-1"];
+
+    // 검단고1 (정예훈, 최세빈) 4월 1-2주차
+    const fb_base_geomdan1 = " 안녕하십니까. 영어강사 김준영입니다.<br><br>검단고1 4월 1~2주차 학습 안내드립니다.<br>이번 주차까지 2025년 3월 모의고사 및 교과서 1, 2과 분석, 워크북, 그리고 전 유형 복습 문제 풀이를 완료하였습니다. 현재는 2026년 3월 모의고사 30번 지문까지 분석 및 리뷰 테스트를 완료한 상태입니다.<br><br>";
+
+    if (!reportDB["정예훈"]) reportDB["정예훈"] = {};
+    reportDB["정예훈"]["4-1"] = {"voca":"-", "attend":"100", "feedback": fb_base_geomdan1 + "예훈이의 경우, 리뷰테스트 결과 문장 분석 및 어법에 약점이 있고, 문제 풀이 결과 한 유형이 아닌 전유형에서 구멍들이 많이 보입니다. 25년 범위 워크북은 다 되어있는데, 전유형 문제에서 과제가 밀려있는 상태입니다. 밀린 과제를 잘 수행할 수 있도록 지도하겠습니다.", "photo":""};
+    reportDB["정예훈"]["4-2"] = reportDB["정예훈"]["4-1"];
+
+    if (!reportDB["최세빈"]) reportDB["최세빈"] = {};
+    reportDB["최세빈"]["4-1"] = {"voca":"-", "attend":"100", "feedback": fb_base_geomdan1 + "세빈이의 경우, 리뷰테스트 결과 구문 분석 및 어법 상태가 좋고, 문제 풀이 결과 전유형 양호합니다. 전유형에서 취약한 부분이 없어 심화문제로 넘어갈 예정입니다. 앞으로도 지금처럼 잘 따라올 수 있도록 많은 칭찬 부탁드립니다.", "photo":""};
+    reportDB["최세빈"]["4-2"] = reportDB["최세빈"]["4-1"];
+
+    // 고등부 김유진 4월 1-2주차
+    if (!reportDB["김유진"]) reportDB["김유진"] = {};
+    reportDB["김유진"]["4-1"] = {"voca":"-", "attend":"100", "feedback": " 안녕하십니까. 영어강사 김준영입니다.<br><br>4월 1~2주차 학습 안내드립니다.<br>이번 주차까지 2025년 3월 모의고사 및 교과서 1, 2과 분석, 워크북, 그리고 전 유형 복습 문제 풀이를 완료하였습니다. 현재는 2026년 3월 모의고사 30번 지문까지 분석 및 리뷰 테스트를 완료한 상태입니다.<br><br>유진이의 경우, 워크북 및 전유형 진도는 양호하지만 꾸준히 오답이 나오는 경향이 있습니다. 특정 유형이 아니라 지속적인 오답이 나오는 경우는 문장분석 및 어휘에 구멍이 있기 때문입니다. 이를 보완하기 위해 유의어/반의어 프린트 배부 완료했고 추적관리 계속 하도록 하겠습니다.", "photo":""};
+    reportDB["김유진"]["4-2"] = reportDB["김유진"]["4-1"];
+
+    // 마전고1 감유헌 4월 1-2주차
+    if (!reportDB["감유헌"]) reportDB["감유헌"] = {};
+    reportDB["감유헌"]["4-1"] = {"voca":"-", "attend":"100", "feedback": "안녕하십니까. 영어강사 김준영입니다. <br><br>마전고1 4월 1~2주차 학습 안내드립니다.<br>현재 교과서 1, 2과 분석을 완료하였으며, 2025년 3월 및 2026년 3월 모의고사를 병행하여 진도를 나가고 있습니다. 학교 수행평가 대비로 인해 전체적인 진도가 조금 느려진 경향이 있으나, 진도는 다음 주 기준으로 모두 완료될 예정입니다.<br><br>유헌이 같은 경우 문장이나 지문이해가 부족하여 시간을 오래 써야하는 경향이 있습니다. 꾸준히 오답이 나오는 경향이 있는데, 특정 유형이 아니라 지속적인 오답이 나오는 경우는 문장분석 및 어휘에 구멍이 있기 때문입니다. 현재 리뷰 테스트 통해 더블체킹 중이며 추적관리 지속할 예정입니다. ", "photo":""};
+    reportDB["감유헌"]["4-2"] = reportDB["감유헌"]["4-1"];
+
     const passwordDB = {
         "김윤호": "4281", "이채훈": "9678", "오세홍": "8026", "정진우": "0383", 
         "배태랑": "3522", "공태현": "9517", "김재운": "2206", "강규온": "0585", 
@@ -704,6 +731,7 @@
         "박주은": "0728", "박채은": "1376", "최세빈": "1377",
         "차예은": "0000", "정지훈": "3078", "감유헌": "1836", 
         "원하율": "9520", "조영서": "6545", "조현서": "6545", "이온유": "6342",
+        "이태윤": "8530",
         "김예원": "8929", "정예훈": "7678"
     };
 
@@ -746,17 +774,19 @@
         document.getElementById('reportDetail').style.display = 'block';
         document.getElementById('studentTitle').innerText = `✨ ${name} 학생 학습 리포트`;
         
-        showMonth('3'); // 기본으로 3월 표시
+        showMonth('4'); // 기본으로 4월 표시
     }
 
     function showMonth(month) {
-        document.getElementById('weeks2').style.display = 'none';
-        document.getElementById('weeks3').style.display = 'none';
-        document.getElementById('btnMonth2').classList.remove('active');
-        document.getElementById('btnMonth3').classList.remove('active');
+        // 기존 2, 3월 로직을 동적으로 처리하도록 개선
+        document.querySelectorAll('.week-nav').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.sub-tab-btn').forEach(el => el.classList.remove('active'));
 
-        document.getElementById('weeks' + month).style.display = 'flex';
-        document.getElementById('btnMonth' + month).classList.add('active');
+        const weekNav = document.getElementById('weeks' + month);
+        const btnMonth = document.getElementById('btnMonth' + month);
+        
+        if(weekNav) weekNav.style.display = 'flex';
+        if(btnMonth) btnMonth.classList.add('active');
         
         const firstWeekBtn = document.querySelector(`#weeks${month} .week-btn`);
         if(firstWeekBtn) firstWeekBtn.click();
